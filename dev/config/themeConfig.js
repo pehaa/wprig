@@ -2,14 +2,14 @@
 
 module.exports = {
 	theme: {
-		slug: 'wprig',
-		name: 'WP Rig',
-		author: 'Morten Rand-Hendriksen'
+		slug: 'pehaarig',
+		name: 'PeHaa Rig',
+		author: 'Paulina Hetman aka pehaa'
 	},
 	dev: {
 		browserSync: {
 			live: true,
-			proxyURL: 'wprig.test:8888',
+			proxyURL: 'pehaarig.test',
 			bypassPort: '8181'
 		},
 		browserslist: [ // See https://github.com/browserslist/browserslist
@@ -17,7 +17,7 @@ module.exports = {
 			'last 2 versions'
 		],
 		debug: {
-			styles: false, // Render verbose CSS for debugging.
+			styles: true, // Render verbose CSS for debugging.
 			scripts: false // Render verbose JS for debugging.
 		}
 	},
