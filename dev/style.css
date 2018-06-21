@@ -448,6 +448,9 @@ template {
 
 	.site-header {
 		grid-column: span 2;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	.site-main {
@@ -722,16 +725,9 @@ textarea {
 --------------------------------------------------------------*/
 
 .site-header {
+	position: sticky;
+	top: 0;
 	padding-bottom: 1em;
-}
-
-.header-image {
-	margin: 0 auto;
-}
-
-.header-image img {
-	display: block;
-	margin: 0 auto;
 }
 
 .custom-logo-link {
@@ -740,17 +736,15 @@ textarea {
 }
 
 .site-branding {
-	text-align: center;
-	padding: 60px 0 1.75em;
 }
 
 .site-title {
-	margin: 0 1em;
 	font-family: var(--highlight-font-family);
 	font-size: 38px;
 	font-weight: bold;
 	line-height: 1.2;
 	color: #333332;
+	margin: 0;
 }
 
 .site-title a {
@@ -772,13 +766,9 @@ textarea {
 ## Main navigation menu
 --------------------------------------------------------------*/
 .main-navigation {
-	clear: both;
-	display: block;
-	margin: 0 auto 2em;
-	padding: 0 1em;
-	max-width: calc(var(--content-width) * 16)px; /* Fallback for older browsers. */
-	max-width: var(--content-width)rem;
 	font-family: var(--highlight-font-family);
+	font-weight: var(--highlight-font-weight);
+	font-size: 0.875rem;
 }
 
 .menu-toggle {
@@ -816,7 +806,9 @@ textarea {
 .main-navigation li {
 	position: relative;
 }
-
+.main-navigation .menu > li > a {
+	text-transform: uppercase;
+}
 .main-navigation ul ul li {
 	padding-left: 1em;
 }
@@ -853,7 +845,10 @@ textarea {
 	}
 
 	.main-navigation ul ul {
-		display: none;
+		visibility: hidden;
+		opacity: 0;
+		transition: 0.5s;
+		pointer-events: none;
 		position: absolute;
 		top: 100%;
 		flex-direction: column;
@@ -948,7 +943,9 @@ textarea {
 	.main-navigation li.toggled-on > ul,
 	.main-navigation:not(.has-dropdown-toggle) li:focus > ul,
 	.main-navigation:not(.has-dropdown-toggle) li:focus-within > ul {
-		display: block;
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
 	}
 }
 

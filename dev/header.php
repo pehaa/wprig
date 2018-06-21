@@ -28,11 +28,6 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wprig' ); ?></a>
 		<header id="masthead" class="site-header">
-			<?php if ( has_header_image() ) : ?>
-				<figure class="header-image">
-					<?php the_header_image_tag(); ?>
-				</figure>
-			<?php endif; ?>
 			<div class="site-branding">
 				<?php the_custom_logo(); ?>
 				<?php if ( is_front_page() && is_home() ) : ?>
