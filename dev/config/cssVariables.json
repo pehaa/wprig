@@ -6,13 +6,14 @@
     	"global-font-line-height": "1.5",
 		"highlight-font-family": "'Poppins', sans-serif",
 		"highlight-font-weight": "500",
-    	"content-width": "45",
+		"content-width": "45",
+		"wrapper-max-width": "80",
 		"dropdown-symbol-width": "0.7em"
 	},
 	"queries": {
     	"narrow-menu-query": "screen and (max-width: 37.5em)",
     	"wide-menu-query": "screen and (min-width: 37.5em)",
     	"content-query": "screen and (min-width: 48em)",
-    	"sidebar-query": "screen and (min-width: 71.25em)"
+    	"sidebar-query": "screen and (min-width: 60em)"
 	}
 }

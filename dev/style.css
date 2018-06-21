@@ -436,10 +436,14 @@ template {
   margin: 0 auto;
   max-width: 100%;
 }
+body:not(.page-template-custom-page-template-full) .grid-container {
+	margin: auto;
+	width: calc(100% - 2rem);
+	max-width: var(--wrapper-max-width)rem;
+}
 
 @media (--sidebar-query) {
-	.has-sidebar .site {
-		margin: 0 1em;
+	.has-sidebar .grid-container {
 		display: grid;
 		grid-template-columns: 3fr 1fr;
 		grid-gap: 2rem;
@@ -727,7 +731,9 @@ textarea {
 .site-header {
 	position: sticky;
 	top: 0;
-	padding-bottom: 1em;
+	padding: 0.5rem 1rem;
+	background: white;
+	box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
 }
 
 .custom-logo-link {
@@ -788,7 +794,7 @@ textarea {
 	width: 100%;
 	padding: .5em 1em .5em 0;
 	text-decoration: none;
-	color: black;
+	color: inherit;
 }
 
 .main-navigation a:hover,
@@ -808,6 +814,20 @@ textarea {
 }
 .main-navigation .menu > li > a {
 	text-transform: uppercase;
+	text-decoration: none;
+}
+.main-navigation .menu > li > a:after {
+	content: '';
+	display: block;
+	height: 0;
+	border-top: 1px solid;
+	opacity: 0;
+	transform: translateY(10px);
+	transition: .5s ease-in-out;
+}
+.main-navigation .menu > li:hover > a:after {
+	transform: translateY(0px);
+	opacity: 1;
 }
 .main-navigation ul ul li {
 	padding-left: 1em;
@@ -847,6 +867,7 @@ textarea {
 	.main-navigation ul ul {
 		visibility: hidden;
 		opacity: 0;
+		transform: translate3d(0, 20px, 0);
 		transition: 0.5s;
 		pointer-events: none;
 		position: absolute;
@@ -854,12 +875,16 @@ textarea {
 		flex-direction: column;
 		background: white;
 		margin-left: 0;
-		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.1);
 		z-index: 1;
+		padding: 1rem;
+		background: #eee;
+		font-family: var(--global-font-family);
+		font-size: 0.8125rem;
 	}
 
 	.main-navigation ul ul a {
-		width: 200px;
+		width: 10rem;
 	}
 
 	.main-navigation ul ul li {
@@ -946,6 +971,7 @@ textarea {
 		visibility: visible;
 		opacity: 1;
 		pointer-events: auto;
+		transform: translate3d(0, 0, 0);
 	}
 }
 
@@ -958,7 +984,6 @@ textarea {
 .site-main .post-navigation {
 	border-bottom: 1px solid #111;
 	margin: 0 auto 2em;
-	max-width: 720px;
 	overflow: hidden;
 	padding-bottom: 2em;
 	font-family: var(--highlight-font-family);

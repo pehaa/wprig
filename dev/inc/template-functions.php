@@ -19,7 +19,7 @@ function wprig_body_classes( $classes ) {
 
 	if ( is_active_sidebar( 'sidebar-1' ) ) {
 		global $template;
-		if ( 'front-page.php' !== basename( $template ) ) {
+		if ( 'custom-page-template-full.php' !== basename( $template ) ) {
 			$classes[] = 'has-sidebar';
 		}
 	}
