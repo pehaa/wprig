@@ -4,11 +4,36 @@
 
 .primary-sidebar {
 	padding: 1.5rem;
-	font-family: var(--highlight-font-family);
 }
-
+.primary-sidebar .widget {
+	margin-bottom: 1.5rem;
+}
+.widget-area {
+	font-size: 0.875rem;
+	line-height: 1.714;
+}
+.widget-area a {
+	text-decoration: none;
+}
+.primary-sidebar h2 {
+	margin: 0 0 1.5rem;
+}
 @media (--sidebar-query) {
 	.primary-sidebar {
 		padding: 0;
+	}
+	.primary-sidebar > section {
+		padding: 1.5rem;
+		background: #eee;
+	}
+	.secondary-sidebar {
+		display: grid;
+		grid-gap: 2rem;
+	}
+	.grid-3cols {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	.grid-4cols {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 }

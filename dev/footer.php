@@ -12,6 +12,11 @@
 ?>
 
 <footer id="colophon" class="site-footer">
+	
+	<?php 
+		get_template_part( 'template-parts/sidebar', 'footer' );
+	?>
+	
 	<div class="site-info">
 		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wprig' ) ); ?>">
 			<?php
