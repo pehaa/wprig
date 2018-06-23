@@ -327,3 +327,10 @@ require get_template_directory() . '/inc/customizer.php';
  * @link https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/
  */
 require get_template_directory() . '/pluggable/lazyload/lazyload.php';
+
+/**
+ * Optional: Disable emoji.
+ *
+ * @link https://kinsta.com/knowledgebase/disable-emojis-wordpress/
+ */
+require_once get_template_directory() . '/pluggable/disable-emoji.php';

@@ -7,14 +7,4 @@
  * @package wprig
  */
 
-?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	
-	<?php
-	the_content();
-	?>
-	
-
-</article><!-- #post-<?php the_ID(); ?> -->
+the_content();
