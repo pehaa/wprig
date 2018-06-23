@@ -29,17 +29,9 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wprig' ); ?></a>
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php the_custom_logo(); ?>
-			<?php if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php endif; ?>
-
-			<?php $wprig_description = get_bloginfo( 'description', 'display' ); ?>
-			<?php if ( $wprig_description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $wprig_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
+			<?php pehaarig_custom_logo_main(); ?>
+			<?php pehaarig_site_title(); ?>
+			<?php pehaarig_site_description(); ?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main menu', 'wprig' ); ?>"
@@ -68,7 +60,7 @@
 
 			<div class="primary-menu-container">
 				<?php
-
+				pehaarig_custom_logo_mini();
 				wp_nav_menu(
 					array(
 						'theme_location' => 'primary',

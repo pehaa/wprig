@@ -12,7 +12,7 @@ $pehaarig_customizer_fields = array(
 			'panel' => 'pehaarig',
 		),
 		'settings' => array(
-			'yaga_hide_title' => array(
+			'pehaarig_hide_title' => array(
 				'setting_array' => array(),
 				'control_array' => array(
 					'label' => esc_html__( 'Hide Site Title', 'wprig' ),
@@ -20,7 +20,7 @@ $pehaarig_customizer_fields = array(
 					'description' => esc_html__( 'If checked the site title will not be displayed in the site header area.', 'wprig' ),
 				),
 			),
-			'yaga_hide_tagline' => array(
+			'pehaarig_hide_tagline' => array(
 				'setting_array' => array(),
 				'control_array' => array(
 					'label' => esc_html__( 'Hide Site Tagline', 'wprig' ),
@@ -28,27 +28,18 @@ $pehaarig_customizer_fields = array(
 					'description' => esc_html__( 'If checked the site tagline will not be displayed in the site header area.', 'wprig' ),
 				),
 			),
-			'yaga_logo' => array(
+			'pehaarig_logo' => array(
 				'setting_array' => array(
-					'sanitize_callback' => 'PeHaaThemes_Sanitization::sanitize_image',
+					'sanitize_callback' => 'PeHaaThemes_Sanitization::sanitize_media',
 				),
 				'control_array' => array(
-					'type' => 'image',
-					'label' => esc_html__( 'Logo (Standard)', 'wprig' ),
-					'description' => sprintf( esc_html__( 'Upload your logo. The default display height is %s px. We recommend to create it two times bigger (%s) than you want it to be displayed (for retina screens).', 'wprig' ), PeHaaThemes_Theme_Config::$logo_height, 2 * PeHaaThemes_Theme_Config::$logo_height ),
+					'type' => 'media',
+					'label' =>  esc_html__( 'Logo', 'wprig' ),
+					'description' => esc_html__( 'Upload your logo.', 'wprig'),
+					'mime_type' => 'image'
 				),
 			),
-			'yaga_logo_alt' => array(
-				'setting_array' => array(
-					'sanitize_callback' => 'PeHaaThemes_Sanitization::sanitize_image',
-				),
-				'control_array' => array(
-					'type' => 'image',
-					'label' => esc_html__( 'Logo (Alternative)', 'wprig' ),
-					'description' => sprintf( esc_html__( 'Upload an alternative version of your logo. Your image should have the same dimensions as the standard logo.', 'wprig' ), PeHaaThemes_Theme_Config::$logo_height, 2 * PeHaaThemes_Theme_Config::$logo_height ),
-				),
-			),
-			'yaga_logo_height' => array(
+			'pehaarig_logo_height' => array(
 				'setting_array' => array(
 					'default'           => PeHaaThemes_Theme_Config::$logo_height,
 					'sanitize_callback' => 'PeHaaThemes_Sanitization::sanitize_text_with_int',
@@ -56,17 +47,17 @@ $pehaarig_customizer_fields = array(
 				'control_array' => array(
 					'type'        => 'text',
 					'label'       => esc_html__( 'Logo display height', 'wprig' ),
-					'description' => esc_html__( 'Type your logo display height here (your logo should be twice as high for a crispy look on retina screens).', 'wprig' ),
 				),
 			),
-			'yaga_mini_logo' => array(
+			'pehaarig_logo_mini' => array(
 				'setting_array' => array(
-					'sanitize_callback' => 'PeHaaThemes_Sanitization::sanitize_image',
+					'sanitize_callback' => 'PeHaaThemes_Sanitization::sanitize_media',
 				),
 				'control_array' => array(
-					'type' => 'image',
-					'label' => esc_html__( 'Mini Logo', 'wprig' ),
-					'description' => sprintf( __( 'Upload your reduced logo version, the default height is %s px. It will be used <strong>only</strong> if you choose the Sticky or Fixed Bar navigation option (see the "Border & Navigation" panel).', 'wprig' ), 2 * PeHaaThemes_Theme_Config::$mini_logo_height ),
+					'type' => 'media',
+					'label' =>  esc_html__( 'Logo - version mini', 'wprig' ),
+					'description' => esc_html__( 'Upload your logo.', 'wprig'),
+					'mime_type' => 'image'
 				),
 			),
 		),

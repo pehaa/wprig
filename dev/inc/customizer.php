@@ -37,6 +37,7 @@ if ( ! class_exists( 'Pehaarig_Customizer' ) ) {
 			);
 
 			require_once get_template_directory() . '/inc/customizer-fields.php';
+			require_once get_template_directory() . '/inc/customizer-sanitize.php';
 		
 			$this->fields = $pehaarig_customizer_fields;
 
@@ -132,16 +133,14 @@ if ( ! class_exists( 'Pehaarig_Customizer' ) ) {
 				}
 				$settings_array = $setting_fields['setting_array'];
 
-/* 				if ( ! isset( $settings_array['sanitize_callback'] ) ) {
+ 				if ( ! isset( $settings_array['sanitize_callback'] ) ) {
 					if ( method_exists( 'PeHaaThemes_Sanitization', 'sanitize_' . $setting_fields['control_array']['type'] ) ) {
 						$settings_array['sanitize_callback'] = 'PeHaaThemes_Sanitization::sanitize_' . $setting_fields['control_array']['type'];
 					} else {
 						$settings_array['sanitize_callback'] = 'PeHaaThemes_Sanitization::sanitize_text';
 					}
 
-				} */
-
-				$settings_array['sanitize_callback'] = '__return_true';
+				}
 
 				$wp_customize_method = 'add_setting';
 				

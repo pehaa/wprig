@@ -142,7 +142,7 @@ function wprig_fonts_url() {
 	/**
 	 * Translator: If Roboto Sans does not support characters in your language, translate this to 'off'.
 	 */
-	$titles = esc_html_x( 'on', 'Poppins font: on or off', 'wprig' );
+	$titles = esc_html_x( 'on', 'Allerta Stencil font: on or off', 'wprig' );
 	/**
 	 * Translator: If Crimson Text does not support characters in your language, translate this to 'off'.
 	 */
@@ -151,7 +151,7 @@ function wprig_fonts_url() {
 	$font_families = array();
 
 	if ( 'off' !== $titles ) {
-		$font_families[] = 'Poppins:500';
+		$font_families[] = 'Allerta Stencil';
 	}
 
 	if ( 'off' !== $body ) {
@@ -287,6 +287,10 @@ function wprig_scripts() {
 			'collapse' => __( 'Collapse child menu', 'wprig' ),
 		));
 
+		// Enqueue the masterhead script.
+		wp_enqueue_script( 'wprig-masterhead', get_theme_file_uri( '/js/masterhead.js' ), array(), '20180514', true );
+		wp_script_add_data( 'wprig-masterhead', 'async', false );
+
 		// Enqueue skip-link-focus script.
 		wp_enqueue_script( 'wprig-skip-link-focus-fix', get_theme_file_uri( '/js/skip-link-focus-fix.js' ), array(), '20180514', false );
 		wp_script_add_data( 'wprig-skip-link-focus-fix', 'defer', true );
@@ -299,6 +303,15 @@ function wprig_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'wprig_scripts' );
+
+/**
+ * Enqueue scripts.
+ */
+function cc_mime_types( $mimes ){
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' );
 
 /**
  * Custom responsive image sizes.

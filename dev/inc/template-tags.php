@@ -297,3 +297,83 @@ function wprig_the_attachment_navigation() {
 	</nav><!-- .navigation .attachment-navigation -->
 	<?php
 }
+
+
+if ( ! function_exists( 'pehaarig_custom_logo' ) ) :
+/**
+ * Displays an optional post thumbnail.
+ *
+ * Wraps the post thumbnail in an anchor element on index views, or a div
+ * element when on single views.
+ */
+	function pehaarig_custom_logo( $id, $height ) {
+		if ( $id ) {
+			$custom_logo_attr = array(
+				'class'    => 'custom-logo height-set',
+				'itemprop' => 'logo',
+				'height' => max( $height, 48 )
+			);
+
+			$image_alt = get_post_meta( $id, '_wp_attachment_image_alt', true );
+			if ( empty( $image_alt ) ) {
+				$custom_logo_attr['alt'] = get_bloginfo( 'name', 'display' );
+			}
+			$html = printf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
+				esc_url( home_url( '/' ) ),
+				wp_get_attachment_image( $id, 'full', false, $custom_logo_attr )
+			);
+		}
+	}
+endif;
+
+if ( ! function_exists( 'pehaarig_custom_logo_main' ) ) :
+	/**
+	 * Displays an optional post thumbnail.
+	 *
+	 * Wraps the post thumbnail in an anchor element on index views, or a div
+	 * element when on single views.
+	 */
+	function pehaarig_custom_logo_main() {
+		$custom_logo_id = get_theme_mod( 'pehaarig_logo' );
+		$custom_logo_height = intval( get_theme_mod( 'pehaarig_logo_height' ) );
+		pehaarig_custom_logo( $custom_logo_id, $custom_logo_height );
+	}
+endif;
+
+if ( ! function_exists( 'pehaarig_custom_logo_mini' ) ) :
+	/**
+	 * Displays an optional post thumbnail.
+	 *
+	 * Wraps the post thumbnail in an anchor element on index views, or a div
+	 * element when on single views.
+	 */
+	function pehaarig_custom_logo_mini() {
+		$custom_logo_id = get_theme_mod( 'pehaarig_logo_mini' );
+		pehaarig_custom_logo( $custom_logo_id, 48 );
+	}
+endif;
+
+if ( ! function_exists( 'pehaarig_site_title' ) ) :
+	function pehaarig_site_title() {
+		if ( ! get_theme_mod( 'pehaarig_hide_title' ) ) {
+			if ( is_front_page() && is_home() ) : ?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php else : ?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			<?php
+			endif;
+		}
+	}
+endif;
+
+if ( ! function_exists( 'pehaarig_site_description' ) ) :
+	function pehaarig_site_description() {
+		$wprig_description = get_bloginfo( 'description', 'display' );
+		if ( ! get_theme_mod( 'pehaarig_hide_tagline' ) && ( $wprig_description || is_customize_preview() ) ) {
+		?>
+			<p class="site-description"><?php echo $wprig_description; /* WPCS: xss ok. */ ?></p>
+		<?php
+		}
+	}
+endif;
+
