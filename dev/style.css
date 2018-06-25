@@ -436,7 +436,7 @@ template {
   margin: 0 auto;
   max-width: 100%;
 }
-body:not(.page-template-custom-page-template-full) .grid-container {
+body:not(.page-template-custom-page-template-full) .wrapper {
 	margin: auto;
 	width: calc(100% - 2rem);
 	max-width: var(--wrapper-max-width)rem;
@@ -744,12 +744,10 @@ textarea {
 	font-size: 38px;
 	font-weight: bold;
 	line-height: 1.2;
-	color: #333332;
 	margin: 0;
 }
 
 .site-title a {
-	text-decoration: none;
 	color: inherit;
 }
 
@@ -761,7 +759,6 @@ textarea {
 	font-weight: inherit;
 	line-height: 1.4;
 	word-wrap: break-word;
-	color: #757575;
 }
 .primary-menu-container .custom-logo {
 	display: none;
@@ -769,14 +766,14 @@ textarea {
 @media (--sidebar-query) {
 	.site-header {
 		padding-bottom: 4rem;
-		
 	}
 	.main-navigation {
 		position: absolute;
 		background: inherit;
 		left: 0;
 		right: 0;
-		box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
+		border-bottom: 1px solid;
+		
 	}
 	.masthead-pre-fixed .main-navigation {
 		position: fixed;
@@ -790,7 +787,6 @@ textarea {
 	}
 	.masthead-pre-fixed .primary-menu-container {
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
 		max-width: 1280px;
 		margin: auto;
@@ -798,14 +794,18 @@ textarea {
 	.masthead-pre-fixed .primary-menu-container .custom-logo {
 		display: block;
 	}
+	.secondary-navigation {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 }
 
 /*--------------------------------------------------------------
 ## Main navigation menu
 --------------------------------------------------------------*/
 .main-navigation {
-	font-family: var(--highlight-font-family);
-	font-weight: var(--highlight-font-weight);
+	font-weight: var(--global-font-weight-bold);
 	font-size: 0.875rem;
 	line-height: 1.714;
 }
@@ -823,18 +823,21 @@ textarea {
 	background: transparent;
 }
 
-.main-navigation a {
-	display: block;
+.site-header a,
+.site-footer a {
 	text-decoration: none;
 	color: inherit;
 }
-
+.main-navigation a {
+	display: block;
+}
 .main-navigation a:hover,
 .main-navigation a:focus {
 	text-decoration: underline;
 }
 
-.main-navigation ul {
+.main-navigation ul,
+.secondary-navigation ul {
 	display: block;
 	list-style: none;
 	margin: 0;
@@ -892,7 +895,10 @@ textarea {
 	.main-navigation ul li a {
 		padding: .4rem 0.5rem;
 	}
-
+	.secondary-navigation ul li a {
+		padding: 0 0.5rem;
+		font-weight: var(--global-font-weight-bold);
+	}
 	.main-navigation ul li {
 		margin: 0 0 0 0.5em;
 	}
@@ -939,9 +945,14 @@ textarea {
 		min-height: 100%;
 	}
 
-	.main-navigation .menu {
+	.main-navigation .menu,
+	.secondary-navigation .menu {
 		display: flex;
 		flex-wrap: wrap;
+		align-items: center;	
+	}
+	
+	.main-navigation .menu {
 		justify-content: center;
 	}
 
@@ -1053,6 +1064,9 @@ textarea {
 # Footer
 --------------------------------------------------------------*/
 .site-footer {
+	padding: 1.5rem;
+	background: var(--global-font-color);
+	color: #fff;
 }
 
 .site-info {
@@ -1072,4 +1086,10 @@ textarea {
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
 	display: block;
+}
+.u-flex-spacebetween {
+	justify-content: space-between;
+}
+.u-flex-center {
+	justify-content: center;
 }

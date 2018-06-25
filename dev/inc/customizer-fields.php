@@ -28,7 +28,7 @@ $pehaarig_customizer_fields = array(
 					'description' => esc_html__( 'If checked the site tagline will not be displayed in the site header area.', 'wprig' ),
 				),
 			),
-			'pehaarig_logo' => array(
+			'pehaarig_logo_main' => array(
 				'setting_array' => array(
 					'sanitize_callback' => 'PeHaaThemes_Sanitization::sanitize_media',
 				),
@@ -68,38 +68,6 @@ $pehaarig_customizer_fields = array(
 			'panel' => 'pehaarig',
 		),
 		'settings' => array(
-			'yaga_ml' => array(
-				'setting_array' => array(
-					'default' => 'normal',
-				),
-				'control_array' => array(
-					'label' => esc_html__( 'Pages Border', 'wprig' ),
-					'type' => 'select',
-					'choices' => array(
-						'normal' => esc_html__( 'Default, 32px on large screens.', 'wprig' ),
-						'tiny' => esc_html__( 'Tiny, 12px.', 'wprig' ),
-						'no' => esc_html__( 'None.', 'wprig' ),
-					),
-					'description' => esc_html__( 'You can set the width of the pages border here.', 'wprig' ),
-				),
-			),
-			'yaga_navigation' => array(
-				'setting_array' => array(
-					'default' => 'default',
-				),
-				'control_array' => array(
-					'label' => esc_html__( 'Type of Navigation', 'wprig' ),
-					'type' => 'select',
-					'choices' => array(
-						'default' => esc_html__( 'Default', 'wprig' ),
-						'sticky_full' => esc_html__( 'Sticky, full', 'wprig' ),
-						'sticky_center' => esc_html__( 'Sticky, center', 'wprig' ),
-						'top_fixed_fixed' => esc_html__( 'Fixed Bar, no scrolling effect', 'wprig' ),
-						'top_fixed_center' => esc_html__( 'Fixed Bar with centered navigation', 'wprig' ),
-					),
-					'description' => esc_html__( 'Choose the type of navigation. "Sticky, full" will display the navigation aligned to the right and logo in the left corner.', 'wprig' ),
-				),
-			),
 			'yaga_search_in_nav' => array(
 				'setting_array' => array(
 					'default' => '1',
@@ -108,30 +76,6 @@ $pehaarig_customizer_fields = array(
 					'label' => esc_html__( 'Search in the Site Header', 'wprig' ),
 					'description' => esc_html__( 'Add search to the main navigation menu.', 'wprig' ),
 					'type' => 'checkbox',
-				),
-			),
-		),
-	),
-	'yaga_preloader' => array(
-		'section' => array(
-			'title' => esc_html__( 'Preloader', 'wprig' ),
-			'panel' => 'pehaarig',
-		),
-		'settings' => array(
-			'yaga_preloader_in' => array(
-				'setting_array' => array(
-					'default' => 'on_check_and_archives',
-				),
-				'control_array' => array(
-					'label' => esc_html__( 'Default Behavior', 'wprig' ),
-					'type' => 'select',
-					'description' => esc_html__( 'Choose on which pages you want to use a preloader.', 'wprig' ),
-					'choices' => array(
-						'on_check_and_archives' => esc_html__( 'Archive pages and Check-in/out for custom pages and posts.', 'wprig' ),
-						'on_check' => esc_html__( 'Check-in/out for custom pages and posts.', 'wprig' ),
-						'always' => esc_html__( 'Always', 'wprig' ),
-						'never' => esc_html__( 'Never', 'wprig' ),
-					),
 				),
 			),
 		),

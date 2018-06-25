@@ -326,6 +326,15 @@ if ( ! function_exists( 'pehaarig_custom_logo' ) ) :
 	}
 endif;
 
+/**
+ * Checks is custom logo is available.
+ *
+ * @params $version - version of the logo: main, mini or footer
+ */
+function pehaarig_has_custom_logo( $version = 'main' ) {
+	return get_theme_mod( "pehaarig_logo_$version" ) > 0;
+}
+
 if ( ! function_exists( 'pehaarig_custom_logo_main' ) ) :
 	/**
 	 * Displays an optional post thumbnail.
@@ -334,7 +343,7 @@ if ( ! function_exists( 'pehaarig_custom_logo_main' ) ) :
 	 * element when on single views.
 	 */
 	function pehaarig_custom_logo_main() {
-		$custom_logo_id = get_theme_mod( 'pehaarig_logo' );
+		$custom_logo_id = get_theme_mod( 'pehaarig_logo_main' );
 		$custom_logo_height = intval( get_theme_mod( 'pehaarig_logo_height' ) );
 		pehaarig_custom_logo( $custom_logo_id, $custom_logo_height );
 	}
@@ -350,6 +359,19 @@ if ( ! function_exists( 'pehaarig_custom_logo_mini' ) ) :
 	function pehaarig_custom_logo_mini() {
 		$custom_logo_id = get_theme_mod( 'pehaarig_logo_mini' );
 		pehaarig_custom_logo( $custom_logo_id, 48 );
+	}
+endif;
+
+if ( ! function_exists( 'pehaarig_custom_logo_footer' ) ) :
+	/**
+	 * Displays an optional post thumbnail.
+	 *
+	 * Wraps the post thumbnail in an anchor element on index views, or a div
+	 * element when on single views.
+	 */
+	function pehaarig_custom_logo_footer() {
+		$custom_logo_id = get_theme_mod( 'pehaarig_logo_footer' );
+		pehaarig_custom_logo( $custom_logo_id, 64 );
 	}
 endif;
 

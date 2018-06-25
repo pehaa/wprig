@@ -10,30 +10,27 @@
  */
 
 ?>
-
-<footer id="colophon" class="site-footer">
-	
-	<?php 
-		get_template_part( 'template-parts/sidebar', 'footer' );
-	?>
-	
-	<div class="site-info">
-		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wprig' ) ); ?>">
-			<?php
-			/* translators: %s: CMS name, i.e. WordPress. */
-			printf( esc_html__( 'Proudly powered by %s', 'wprig' ), 'WordPress' );
-			?>
-		</a>
-		<span class="sep"> | </span>
-		<?php
-			/* translators: 1: Theme name, 2: Theme author. */
-			printf( esc_html__( 'Theme: %1$s by %2$s.', 'wprig' ), '<a href="' . esc_url( 'https://github.com/wprig/wprig/' ) . '">WP Rig</a>', 'the contributors' );
-		?>
-	</div><!-- .site-info -->
-</footer><!-- #colophon -->
 </div><!-- #page -->
 </div><!-- .grid-container -->
-<?php wp_footer(); ?>
+<footer id="colophon" class="site-footer">	
+	<nav class="secondary-navigation wrapper">
+		<?php if ( pehaarig_has_custom_logo( 'footer' ) ) {
+			pehaarig_custom_logo_footer();
+		} else { ?>
+			<p><?php echo '&copy;' . date( 'Y' ) . ' ' . esc_html( get_bloginfo( 'name' ) ); ?></p>
+		<?php }
+		wp_nav_menu(
+			array(
+				'theme_location' => 'secondary',
+				'menu_id'        => 'secondary-menu',
+				'container'      => 'ul',
+				'depth'          => 1,
+			)
+		);
+		?>
+	<nav><!-- .wrapper -->
+</footer><!-- #colophon -->
 
+<?php wp_footer(); ?>
 </body>
 </html>

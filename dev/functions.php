@@ -45,6 +45,7 @@ function wprig_setup() {
 	register_nav_menus(
 		array(
 			'primary' => esc_html__( 'Primary', 'wprig' ),
+			'secondary' => esc_html__( 'Secondary', 'wprig' ),
 		)
 	);
 
@@ -219,7 +220,7 @@ function wprig_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-	register_sidebar( array(
+	/* register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'wprig' ),
 		'id'            => 'footer-1',
 		'description'   => esc_html__( 'Add widgets here.', 'wprig' ),
@@ -227,30 +228,9 @@ function wprig_widgets_init() {
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
-	) );
+	) ); */
 }
 add_action( 'widgets_init', 'wprig_widgets_init' );
-
-/* dynamic_sidebar_params */
-/* public static function yaga_footer_sidebar_count( $params ) {
-	if ( isset( $params[0]['id'] ) && 'footer-1' === $params[0]['id'] ) {
-		$all_widgets = wp_get_sidebars_widgets();
-		$my_widgets = $all_widgets['footer-1'];
-		$my_widgets_count = count( $my_widgets );
-
-		if (  0 === ( $my_widgets_count % 4 ) ) {
-			return $params;
-		}
-
-		if ( 0 === $my_widgets_count % 3 || $my_widgets_count % 3 > $my_widgets_count % 4 ) {
-			$before_widget = $params[0]['before_widget'];
-			$params[0]['before_widget'] = preg_replace( '/u-1-of-4-desk u-1-of-2-lap/', 'u-1-of-3-desk u-1-of-3-lap',  $before_widget );
-		}
-	}
-
-	return $params;
-
-} */
 
 /**
  * Enqueue styles.

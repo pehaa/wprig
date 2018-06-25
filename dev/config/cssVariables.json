@@ -1,7 +1,9 @@
 {
 	"variables": {
-		"global-font-color": "#333",
+		"global-font-color": "#263b7a",
 		"global-font-family": "'Open Sans', sans-serif",
+		"global-font-weight": "400",
+		"global-font-weight-bold": "600",
     	"global-font-size": "16",
     	"global-font-line-height": "1.5",
 		"highlight-font-family": "Allerta Stencil, sans-serif",

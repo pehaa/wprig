@@ -57,8 +57,8 @@
 			>
 				<?php esc_html_e( 'Menu', 'wprig' ); ?>
 			</button>
-
-			<div class="primary-menu-container">
+			<?php $menu_class = pehaarig_has_custom_logo( 'mini' ) ? ' u-flex-spacebetween' : ' u-flex-center'; ?>
+			<div class="primary-menu-container <?php echo esc_attr( $menu_class ); ?>">
 				<?php
 				pehaarig_custom_logo_mini();
 				wp_nav_menu(
@@ -73,4 +73,4 @@
 			</div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-	<div class="grid-container">
+	<div class="grid-container wrapper">
