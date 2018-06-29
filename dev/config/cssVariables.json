@@ -6,11 +6,15 @@
 		"global-font-weight-bold": "600",
     	"global-font-size": "16",
     	"global-font-line-height": "1.5",
-		"highlight-font-family": "Allerta Stencil, sans-serif",
+		"highlight-font-family": "CeraStencilPro-Regular, sans-serif",
 		"highlight-font-weight": "400",
 		"content-width": "45",
 		"wrapper-max-width": "80",
-		"dropdown-symbol-width": "0.7em"
+		"dropdown-symbol-width": "0.7em",
+		"global-yellow": "#ebac45",
+		"global-red": "#e96553",
+		"global-green": "#137873",
+		"global-blue": "#2f98d2"
 	},
 	"queries": {
     	"narrow-menu-query": "screen and (max-width: 37.5em)",

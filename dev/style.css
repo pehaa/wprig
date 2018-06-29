@@ -1,17 +1,16 @@
 /*!
-Theme Name: WP Rig
-Theme URI: https://github.com/wprig/wprig/
-Author: Morten Rand-Hendriksen et.al.
-Author URI: https://github.com/wprig/wprig/
-Description: A progressive theme development rig for WordPress.
-Version: 1.0.0
+Theme Name: pehaarig
+Theme URI: https://github.com/pehaa/pehaarig/
+Author: PeHaa THEMES for PEPS Paris
+Author URI: http://wptemplates.pehaa.com/
+Description: WordPress Theme for Foundation Maintenant
+Version: 1.0.1
 License: GNU General Public License v3 or later
 License URI: LICENSE
 Text Domain: wprig
 Tags: translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
 
 CSS normalization based in part on normalize.css by
 Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
@@ -25,7 +24,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Typography
 # Elements
 # Links
-# Forms
+# Formss
 # Header
   # Main navigation menu
 # Content navigation
@@ -1092,4 +1091,27 @@ textarea {
 }
 .u-flex-center {
 	justify-content: center;
+}
+
+.CeraStencilPro-Regular { font-family: CeraStencilPro-Regular, sans-serif; }
+
+h2, .et_divi_builder h2 {
+	font-size: 3.25rem;
+}
+.maintenant-deco {
+	position: relative;
+}
+.maintenant-deco:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 5px;
+	background: var(--global-blue);
+	background-image: 
+		linear-gradient(90deg, var(--global-yellow) 200px, transparent 0),
+		linear-gradient(90deg, var(--global-red) 600px, transparent 0),
+		linear-gradient(90deg, var(--global-green) 800px, transparent 0);
+
 }

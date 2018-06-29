@@ -3,7 +3,7 @@
 module.exports = {
 	theme: {
 		slug: 'pehaarig',
-		name: 'PeHaa Rig',
+		name: 'pehaarig',
 		author: 'Paulina Hetman aka pehaa'
 	},
 	dev: {
