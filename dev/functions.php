@@ -142,7 +142,7 @@ function wprig_fonts_url() {
 	/**
 	 * Translator: If Open Sans does not support characters in your language, translate this to 'off'.
 	 */
-	$font_families[] = 'Open Sans:400,400i,600,600i';
+	$font_families[] = 'Open Sans:400,400i,700,700i';
 	$query_args = array(
 		'family' => urlencode( implode( '|', $font_families ) ),
 		'subset' => urlencode( 'latin,latin-ext' ),

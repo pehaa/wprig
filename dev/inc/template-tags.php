@@ -307,6 +307,7 @@ if ( ! function_exists( 'pehaarig_custom_logo' ) ) :
  * element when on single views.
  */
 	function pehaarig_custom_logo( $id, $height ) {
+		$html = '';
 		if ( $id ) {
 			$custom_logo_attr = array(
 				'class'    => 'custom-logo height-set',
@@ -318,11 +319,12 @@ if ( ! function_exists( 'pehaarig_custom_logo' ) ) :
 			if ( empty( $image_alt ) ) {
 				$custom_logo_attr['alt'] = get_bloginfo( 'name', 'display' );
 			}
-			$html = printf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
+			$html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
 				esc_url( home_url( '/' ) ),
 				wp_get_attachment_image( $id, 'full', false, $custom_logo_attr )
 			);
 		}
+		return $html;
 	}
 endif;
 
@@ -342,10 +344,14 @@ if ( ! function_exists( 'pehaarig_custom_logo_main' ) ) :
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function pehaarig_custom_logo_main() {
+	function pehaarig_custom_logo_main( $echo = true ) {
 		$custom_logo_id = get_theme_mod( 'pehaarig_logo_main' );
 		$custom_logo_height = intval( get_theme_mod( 'pehaarig_logo_height' ) );
-		pehaarig_custom_logo( $custom_logo_id, $custom_logo_height );
+		$logo = pehaarig_custom_logo( $custom_logo_id, $custom_logo_height );
+		if ( $echo ) {
+			echo $logo;
+		}
+		return $logo;
 	}
 endif;
 
