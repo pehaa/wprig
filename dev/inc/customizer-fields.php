@@ -60,6 +60,17 @@ $pehaarig_customizer_fields = array(
 					'mime_type' => 'image'
 				),
 			),
+			'pehaarig_logo_footer' => array(
+				'setting_array' => array(
+					'sanitize_callback' => 'PeHaaThemes_Sanitization::sanitize_media',
+				),
+				'control_array' => array(
+					'type' => 'media',
+					'label' =>  esc_html__( 'Logo - version footer', 'wprig' ),
+					'description' => esc_html__( 'Upload your footer logo.', 'wprig'),
+					'mime_type' => 'image'
+				),
+			),
 		),
 	),
 	'yaga_misc' => array(

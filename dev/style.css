@@ -1072,7 +1072,9 @@ textarea {
 .site-info {
 	text-align: center;
 }
-
+.site-footer .custom-logo {
+	max-height: 4rem;
+}
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/

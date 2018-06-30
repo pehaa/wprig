@@ -375,9 +375,13 @@ if ( ! function_exists( 'pehaarig_custom_logo_footer' ) ) :
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function pehaarig_custom_logo_footer() {
+	function pehaarig_custom_logo_footer( $echo = true ) {
 		$custom_logo_id = get_theme_mod( 'pehaarig_logo_footer' );
-		pehaarig_custom_logo( $custom_logo_id, 64 );
+		$html = pehaarig_custom_logo( $custom_logo_id, 64 );
+		if ( $echo ) {
+			echo $html;
+		}
+		return $html;
 	}
 endif;
 
