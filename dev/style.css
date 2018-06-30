@@ -392,7 +392,8 @@ template {
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
-.screen-reader-text {
+.screen-reader-text,
+.u-visually-hidden {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
 	height: 1px;
@@ -1114,4 +1115,58 @@ h2, .et_divi_builder h2 {
 		linear-gradient(90deg, var(--global-red) 600px, transparent 0),
 		linear-gradient(90deg, var(--global-green) 800px, transparent 0);
 
+}
+
+.wpcf7-form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+#et_builder_outer_content h2 + .wpcf7 {
+	margin-top: 3rem;
+}
+.wpcf7-form .form-info * {
+	color: #fff;
+}
+.wpcf7-form ::placeholder,
+.wpcf7-form input[type=submit]{
+	font-weight: bold;
+	text-transform: uppercase;
+	color: inherit;
+}
+.wpcf7-form p:nth-of-type(3),
+.wpcf7-form p:nth-of-type(4),
+.wpcf7-form p:nth-of-type(5),
+.wpcf7-form p:nth-of-type(6) {
+	flex: 1 0 100%;
+}
+.wpcf7-form [role=alert] {
+	color: inherit;
+	font-weight: bold;
+	font-size: 0.75rem;
+}
+.et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form p:last-of-type {
+	text-align: right;
+}
+[id=cf7-objet] {
+	width: 100%!important;
+}
+
+.et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form input[type=text],
+.et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form input[type=email],
+.et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form input[type=submit],
+.et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form textarea {
+	border: none;
+	background: #fff;
+	color: var(--global-font-color);
+	border-radius: 5px;
+	max-width: 100%;
+	font-size: 0.875rem;
+	padding: 0.75rem;
+}
+.et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form input[type=submit] {
+	color: #fff;
+	background: var(--global-font-color);
+	padding-left: 2rem;
+	padding-right: 2rem;
 }
