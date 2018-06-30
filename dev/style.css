@@ -1116,12 +1116,14 @@ h2, .et_divi_builder h2 {
 		linear-gradient(90deg, var(--global-green) 800px, transparent 0);
 
 }
-
-.wpcf7-form {
+@media screen and (min-width: 820px) {
+	.wpcf7-form {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+}
+
 #et_builder_outer_content h2 + .wpcf7 {
 	margin-top: 3rem;
 }
@@ -1163,6 +1165,11 @@ h2, .et_divi_builder h2 {
 	max-width: 100%;
 	font-size: 0.875rem;
 	padding: 0.75rem;
+}
+.et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form textarea,
+.et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form input[type=email],
+.et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form input[type=text] {
+	width: 100%;
 }
 .et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form input[type=submit] {
 	color: #fff;
