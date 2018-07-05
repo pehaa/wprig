@@ -437,7 +437,7 @@ template {
   max-width: 100%;
 }
 body:not(.page-template-custom-page-template-full) .wrapper {
-	margin: auto;
+	margin: 2rem auto;
 	width: calc(100% - 2rem);
 	max-width: var(--wrapper-max-width)rem;
 }
@@ -486,11 +486,17 @@ h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
 
-.entry-header h1.entry-title {
-	font-size: 32px;
+h2,
+.comments-title,
+.comment-reply-title {
 	font-size: 2rem;
-	line-height: 1.4;
-	margin: 1em 0;
+	line-height: 1.5;
+}
+
+.entry-header h1.entry-title {
+	font-size: 3rem;
+	line-height: 1.25;
+	margin: 0 0 1.5rem;
 }
 
 dfn, cite, em, i {
@@ -685,9 +691,10 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: #666;
-	border: 1px solid #ccc;
+	background: #eee;
+	border: none;
 	border-radius: 3px;
-	padding: 3px;
+	padding: 0.75rem;
 }
 
 input[type="text"]:focus,
@@ -753,8 +760,6 @@ textarea {
 
 .site-description {
 	margin: .4375em 0 0;
-	font-family: var(--highlight-font-family);
-	font-weight: var(--highlight-font-weight);
 	font-size: 17px;
 	font-weight: inherit;
 	line-height: 1.4;
@@ -812,17 +817,42 @@ textarea {
 
 .menu-toggle {
 	display: block;
-	margin: 1.2em auto;
-	padding: .6em 1.2em .5em;
-	font-family: var(--highlight-font-family);
-	font-weight: var(--highlight-font-weight);
-	font-size: 80%;
-	text-transform: uppercase;
-	border: 2px solid black;
-	border-radius: 0;
+	border: none;
 	background: transparent;
+	position: fixed;
+	top: 1rem;
+	left: 1rem;
+	padding: 0.5rem;
 }
-
+.menu-toggle span {
+	display: inline-block;
+    width: 2.1rem;
+    height: 3px;
+    position: relative;
+    top: 0;
+    vertical-align: middle;
+    background: linear-gradient(90deg, var(--global-green) 50%, var(--global-red) 0);
+    transition: all ease .6s;
+}
+.menu-toggle span:after,
+.menu-toggle span:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    transition: inherit;
+    left: 0;
+	outline: 1px solid transparent;
+}
+.menu-toggle span:before{
+	top: -0.65rem;
+	background: var(--global-yellow);
+}
+.menu-toggle span:after{
+	top: 0.65rem;
+	background: var(--global-blue);
+}
 .site-header a,
 .site-footer a {
 	text-decoration: none;
@@ -835,7 +865,11 @@ textarea {
 .main-navigation a:focus {
 	text-decoration: underline;
 }
-
+.secondary-navigation {
+	margin: 0 auto;
+	width: calc(100% - 2rem);
+	max-width: var(--wrapper-max-width)rem;
+}
 .main-navigation ul,
 .secondary-navigation ul {
 	display: block;
@@ -882,8 +916,39 @@ textarea {
 }
 
 @media (--narrow-menu-query) {
+	.sitenav-toggled-on .site-header ~ *,
+	.sitenav-toggled-on .site-footer {
+		display: none;
+	}
+	.site-header {
+		transition: 0.5s;
+	}
+	.custom-logo-link {
+		max-width: 60%;
+	}
+	.custom-logo {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.sitenav-toggled-on .site-header {
+		padding: 1.5rem 2.5rem;
+		border: 5px solid;
+		background: #273b791a;
+	}
 	.main-navigation.toggled-on .menu {
 		display: block;
+	}
+	.main-navigation ul ul li {
+		padding-left: 2rem;
+	}
+	.main-navigation .menu > li  a {
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 1.25rem 0;
+		border-top: 1px solid;
+	}
+	.main-navigation .menu > li > a:after {
+		content: none;
 	}
 }
 
@@ -1029,11 +1094,10 @@ textarea {
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
-	border-bottom: 1px solid #111;
-	margin: 0 auto 2em;
+	border-bottom: 1px solid;
+	margin: 0 auto 2rem;
 	overflow: hidden;
-	padding-bottom: 2em;
-	font-family: var(--highlight-font-family);
+	padding-bottom: 1rem;
 }
 
 .nav-links {
@@ -1058,6 +1122,10 @@ textarea {
 	color: var(--global-font-color);
 	text-decoration: none;
 	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+	font-size: 0.75rem;
 }
 
 /*--------------------------------------------------------------
@@ -1098,7 +1166,7 @@ textarea {
 
 .CeraStencilPro-Regular { font-family: CeraStencilPro-Regular, sans-serif; }
 
-h2, .et_divi_builder h2 {
+.et_builder_outer_content h2 {
 	font-size: 3.25rem;
 }
 .maintenant-deco {

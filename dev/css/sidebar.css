@@ -23,8 +23,7 @@
 		padding: 0;
 	}
 	.primary-sidebar > section {
-		padding: 1.5rem;
-		background: #eee;
+	
 	}
 	.secondary-sidebar {
 		display: grid;

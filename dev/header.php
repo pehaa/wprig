@@ -55,7 +55,7 @@
 					[aria-expanded]="siteNavigationMenu.expanded ? 'true' : 'false'"
 				<?php endif; ?>
 			>
-				<?php esc_html_e( 'Menu', 'wprig' ); ?>
+				<span class="menu-toggle__span"></span>
 			</button>
 			<?php $menu_class = pehaarig_has_custom_logo( 'mini' ) ? ' u-flex-spacebetween' : ' u-flex-center'; ?>
 			<div class="primary-menu-container <?php echo esc_attr( $menu_class ); ?>">

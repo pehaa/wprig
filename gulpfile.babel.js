@@ -296,3 +296,14 @@ const testTheme = gulp.series(php);
 const bundleTheme = gulp.series(testTheme, gulp.parallel(scripts, jsMin, jsLibs), styles, images, translate, bundle);
 
 export { testTheme, bundleTheme };
+
+
+var svgstore = require('gulp-svgstore');
+var path = require('path');
+ 
+gulp.task('svgstore', function () {
+    return gulp
+        .src('dev/images/*.svg')
+        .pipe(svgstore())
+        .pipe(gulp.dest('dev/images/dest'));
+});
