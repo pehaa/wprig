@@ -385,6 +385,37 @@ if ( ! function_exists( 'pehaarig_custom_logo_footer' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'pehaarig_custom_logo_affiliate' ) ) :
+	/**
+	 * Displays an optional post thumbnail.
+	 *
+	 * Wraps the post thumbnail in an anchor element on index views, or a div
+	 * element when on single views.
+	 */
+	function pehaarig_custom_logo_affiliate( $echo = true ) {
+		$custom_logo_id = get_theme_mod( 'pehaarig_logo_affiliate' );
+		$url = get_theme_mod( 'pehaarig_link_affiliate' );
+		$html = '';
+		if ( $custom_logo_id ) {
+			$custom_logo_attr = array(
+				'class'    => 'custom-logo affiliate-logo height-set',
+				'height' => 64,
+			);
+
+			$image_alt = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );
+			
+			$html = sprintf( '<a href="%1$s" class="custom-logo-link affiliate-logo-link" rel="home" itemprop="url">%2$s</a>',
+				$url ? esc_url( $url ) : esc_url( home_url( '/' ) ),
+				wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr )
+			);
+		}
+		if ( $echo ) {
+			echo $html;
+		}
+		return $html;
+	}
+endif;
+
 if ( ! function_exists( 'pehaarig_site_title' ) ) :
 	function pehaarig_site_title() {
 		if ( ! get_theme_mod( 'pehaarig_hide_title' ) ) {
@@ -405,6 +436,15 @@ if ( ! function_exists( 'pehaarig_site_description' ) ) :
 		?>
 			<p class="site-description"><?php echo $wprig_description; /* WPCS: xss ok. */ ?></p>
 		<?php
+		}
+	}
+endif;
+
+if ( ! function_exists( 'pehaarig_donation_button' ) ) :
+	function pehaarig_donation_button() {
+		$url = trim( get_theme_mod( 'pehaarig_link_donate' ) );
+		if ( $url ) {
+			printf( '<a class="donation-button" href="%1$s"><span class="donation-button-span">%2$s</span></a>', esc_url( $url ), esc_html( 'Faire un don', 'wprig' ) );
 		}
 	}
 endif;

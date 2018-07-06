@@ -731,19 +731,50 @@ textarea {
 .site-header {
 	position: relative;
 	z-index: 99999;
-	padding: 0.5rem 1rem;
+	padding: 1.5rem 1rem;
 	background: white;
 }
 
-.custom-logo-link {
+.custom-logo-link,
+.affiliate-logo-link {
 	display: inline-block;
 }
 
 .site-branding {
-	text-align: center;
+	display: flex;
+	justify-content: space-between;
 }
 .custom-logo {
 	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	height: 4rem;
+}
+.affiliate-logo-link {
+	position: absolute;
+}
+.affiliate-logo-link + .custom-logo-link {
+	flex: 2;
+}
+
+.donation-button {
+	position: absolute;
+	right: 0.5rem;
+	display: inline-block;
+	border: none;
+	border-radius: 18px;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 8px 24px;
+	background: var(--global-yellow);
+	-webkit-box-shadow: 0;
+	box-shadow: 0;
+	background-size: auto 200%;
+	background-position: 0 0;
+	font-size: .875rem;
+}
+.donation-button-span {
+	color: #fff;
 }
 .site-title {
 	font-family: var(--highlight-font-family);

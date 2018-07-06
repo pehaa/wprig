@@ -15,16 +15,16 @@ $pehaarig_customizer_fields = array(
 			'pehaarig_hide_title' => array(
 				'setting_array' => array(),
 				'control_array' => array(
-					'label' => esc_html__( 'Hide Site Title', 'wprig' ),
-					'type' => 'checkbox',
+					'label'       => esc_html__( 'Hide Site Title', 'wprig' ),
+					'type'        => 'checkbox',
 					'description' => esc_html__( 'If checked the site title will not be displayed in the site header area.', 'wprig' ),
 				),
 			),
 			'pehaarig_hide_tagline' => array(
 				'setting_array' => array(),
 				'control_array' => array(
-					'label' => esc_html__( 'Hide Site Tagline', 'wprig' ),
-					'type' => 'checkbox',
+					'label'       => esc_html__( 'Hide Site Tagline', 'wprig' ),
+					'type'        => 'checkbox',
 					'description' => esc_html__( 'If checked the site tagline will not be displayed in the site header area.', 'wprig' ),
 				),
 			),
@@ -33,10 +33,10 @@ $pehaarig_customizer_fields = array(
 					'sanitize_callback' => 'PeHaaThemes_Sanitization::sanitize_media',
 				),
 				'control_array' => array(
-					'type' => 'media',
-					'label' =>  esc_html__( 'Logo', 'wprig' ),
-					'description' => esc_html__( 'Upload your logo.', 'wprig'),
-					'mime_type' => 'image'
+					'type'        => 'media',
+					'label'       => esc_html__( 'Logo', 'wprig' ),
+					'description' => esc_html__( 'Upload your logo.', 'wprig' ),
+					'mime_type'   => 'image',
 				),
 			),
 			'pehaarig_logo_height' => array(
@@ -54,10 +54,10 @@ $pehaarig_customizer_fields = array(
 					'sanitize_callback' => 'PeHaaThemes_Sanitization::sanitize_media',
 				),
 				'control_array' => array(
-					'type' => 'media',
-					'label' =>  esc_html__( 'Logo - version mini', 'wprig' ),
-					'description' => esc_html__( 'Upload your logo.', 'wprig'),
-					'mime_type' => 'image'
+					'type'        => 'media',
+					'label'       => esc_html__( 'Logo - version mini', 'wprig' ),
+					'description' => esc_html__( 'Upload your logo.', 'wprig' ),
+					'mime_type'   => 'image',
 				),
 			),
 			'pehaarig_logo_footer' => array(
@@ -65,28 +65,57 @@ $pehaarig_customizer_fields = array(
 					'sanitize_callback' => 'PeHaaThemes_Sanitization::sanitize_media',
 				),
 				'control_array' => array(
-					'type' => 'media',
-					'label' =>  esc_html__( 'Logo - version footer', 'wprig' ),
-					'description' => esc_html__( 'Upload your footer logo.', 'wprig'),
-					'mime_type' => 'image'
+					'type'        => 'media',
+					'label'       => esc_html__( 'Logo - version footer', 'wprig' ),
+					'description' => esc_html__( 'Upload your footer logo.', 'wprig' ),
+					'mime_type'   => 'image',
 				),
 			),
 		),
 	),
-	'yaga_misc' => array(
+	'pehaarig_affiliation' => array(
 		'section' => array(
-			'title' => esc_html__( 'Border & Navigation', 'wprig' ),
+			'title' => esc_html__( 'Affiliation', 'wprig' ),
 			'panel' => 'pehaarig',
 		),
 		'settings' => array(
-			'yaga_search_in_nav' => array(
+			'pehaarig_logo_affiliate' => array(
 				'setting_array' => array(
-					'default' => '1',
+					'sanitize_callback' => 'PeHaaThemes_Sanitization::sanitize_media',
 				),
 				'control_array' => array(
-					'label' => esc_html__( 'Search in the Site Header', 'wprig' ),
-					'description' => esc_html__( 'Add search to the main navigation menu.', 'wprig' ),
-					'type' => 'checkbox',
+					'type'        => 'media',
+					'label'       => esc_html__( 'Affiliate Logo', 'wprig' ),
+					'description' => esc_html__( 'Upload your affiliate logo.', 'wprig' ),
+					'mime_type'   => 'image',
+				),
+			),
+			'pehaarig_link_affiliate' => array(
+				'setting_array' => array(
+					'sanitize_callback' => 'PeHaaThemes_Sanitization::sanitize_url',
+				),
+				'control_array' => array(
+					'type'        => 'text',
+					'label'       => esc_html__( 'Affiliate Link', 'wprig' ),
+					'description' => esc_html__( 'Paste the url of your affiliate organisation.', 'wprig' ),
+				),
+			),
+		),
+	),
+	'pehaarig_donation_button' => array(
+		'section' => array(
+			'title' => esc_html__( 'Donation', 'wprig' ),
+			'panel' => 'pehaarig',
+		),
+		'settings' => array(
+			'pehaarig_link_donate' => array(
+				'setting_array' => array(
+					'sanitize_callback' => 'PeHaaThemes_Sanitization::sanitize_url',
+				),
+				'control_array' => array(
+					'type'        => 'text',
+					'label'       => esc_html__( 'Donation Link', 'wprig' ),
+					'description' => esc_html__( 'Paste the url of your donation organisation.', 'wprig' ),
 				),
 			),
 		),

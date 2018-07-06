@@ -90,6 +90,12 @@ if ( ! class_exists( 'PeHaaThemes_Sanitization' ) ) :
 
 		}
 
+		public static function sanitize_url( $input ) {
+			
+			return esc_url( $input );
+
+		}
+
 		public static function sanitize_image( $input, $setting ) {
 			
 			return self::sanitize_upload( $input, $setting );

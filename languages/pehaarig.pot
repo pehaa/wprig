@@ -93,10 +93,6 @@ msgstr ""
 msgid "Open menu"
 msgstr ""
 
-#: header.php:58
-msgid "Menu"
-msgstr ""
-
 #: inc/customizer-fields.php:11
 msgid "Logo, Title and Tagline"
 msgstr ""
