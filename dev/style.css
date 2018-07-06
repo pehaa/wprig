@@ -1073,7 +1073,7 @@ textarea {
 	text-align: center;
 }
 .site-footer .custom-logo {
-	max-height: 4rem;
+	max-height: 3rem;
 }
 /*--------------------------------------------------------------
 # Infinite scroll
@@ -1098,8 +1098,9 @@ textarea {
 
 .CeraStencilPro-Regular { font-family: CeraStencilPro-Regular, sans-serif; }
 
-h2, .et_divi_builder h2 {
+h2, #et_builder_outer_content h2 {
 	font-size: 3.25rem;
+	text-transform: uppercase;
 }
 .maintenant-deco {
 	position: relative;
