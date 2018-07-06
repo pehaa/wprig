@@ -13,7 +13,7 @@
 </div><!-- #page -->
 </div><!-- .grid-container -->
 <footer id="colophon" class="site-footer">	
-	<nav class="secondary-navigation wrapper">
+	<nav class="secondary-navigation">
 		<?php if ( pehaarig_has_custom_logo( 'footer' ) ) {
 			pehaarig_custom_logo_footer();
 		} else { ?>

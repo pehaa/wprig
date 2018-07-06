@@ -6,6 +6,7 @@
  */
 
 const SITENAV = document.querySelector( '.main-navigation' ),
+	BODY = document.querySelector( 'body' ),
 	KEYMAP = {
 		TAB: 9
 	};
@@ -123,6 +124,7 @@ function initMenuToggle() {
 
 	MENUTOGGLE.addEventListener( 'click', function() {
 		SITENAV.classList.toggle( 'toggled-on' );
+		BODY.classList.toggle( 'sitenav-toggled-on' );
 		this.setAttribute( 'aria-expanded', 'false' === this.getAttribute( 'aria-expanded' ) ? 'true' : 'false' );
 	}, false );
 }
