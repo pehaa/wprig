@@ -17,8 +17,8 @@
 		"global-blue": "#2f98d2"
 	},
 	"queries": {
-    	"narrow-menu-query": "screen and (max-width: 37.5em)",
-    	"wide-menu-query": "screen and (min-width: 37.5em)",
+    	"narrow-menu-query": "screen and (max-width: 60em)",
+    	"wide-menu-query": "screen and (min-width: 60em)",
     	"content-query": "screen and (min-width: 48em)",
     	"sidebar-query": "screen and (min-width: 60em)"
 	}

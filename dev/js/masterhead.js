@@ -5,8 +5,8 @@
  */
 
 const MASTHEAD = document.getElementById( 'masthead' ),
-	threshold0 = 120,
-	threshold1 = 240;
+	threshold0 = 180,
+	threshold1 = 300;
 
 /**
  * Initiate the main navigation script.

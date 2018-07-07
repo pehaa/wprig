@@ -398,7 +398,7 @@ if ( ! function_exists( 'pehaarig_custom_logo_affiliate' ) ) :
 		$html = '';
 		if ( $custom_logo_id ) {
 			$custom_logo_attr = array(
-				'class'    => 'custom-logo affiliate-logo height-set',
+				'class'    => 'custom-logo affiliate-logo',
 				'height' => 64,
 			);
 

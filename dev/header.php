@@ -30,11 +30,12 @@
 	<header id="masthead" class="site-header">
 		
 		<div class="site-branding">
-			<?php pehaarig_custom_logo_affiliate(); ?>
-			<?php pehaarig_custom_logo_main(); ?>
-			<?php pehaarig_donation_button(); ?>
-			<?php pehaarig_site_title(); ?>
-			<?php pehaarig_site_description(); ?>
+			<div class="donation-ctnr">
+				<?php pehaarig_custom_logo_affiliate(); ?>
+				<?php pehaarig_donation_button(); ?>
+			</div>
+			<div class="custom-logo-link-ctnr"><?php pehaarig_custom_logo_main(); ?></div>
+			
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main menu', 'wprig' ); ?>"
@@ -61,9 +62,10 @@
 				<span class="menu-toggle__span"></span>
 			</button>
 			<?php $menu_class = pehaarig_has_custom_logo( 'mini' ) ? ' u-flex-spacebetween' : ' u-flex-center'; ?>
+			<?php pehaarig_custom_logo_main(); ?>
 			<div class="primary-menu-container <?php echo esc_attr( $menu_class ); ?>">
 				<?php
-				pehaarig_custom_logo_mini();
+				
 				wp_nav_menu(
 					array(
 						'theme_location' => 'primary',
@@ -74,6 +76,7 @@
 
 				?>
 			</div>
+			<?php pehaarig_donation_button(); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 	<div class="grid-container wrapper">

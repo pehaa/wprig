@@ -123,6 +123,7 @@ function initMenuToggle() {
 	MENUTOGGLE.setAttribute( 'aria-expanded', 'false' );
 
 	MENUTOGGLE.addEventListener( 'click', function() {
+		window.scrollTo( 0, 0 );
 		SITENAV.classList.toggle( 'toggled-on' );
 		BODY.classList.toggle( 'sitenav-toggled-on' );
 		this.setAttribute( 'aria-expanded', 'false' === this.getAttribute( 'aria-expanded' ) ? 'true' : 'false' );

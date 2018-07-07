@@ -467,6 +467,11 @@ body:not(.page-template-custom-page-template-full) .wrapper {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+@media (--narrow-menu-query) {
+	html {
+		font-size: 87.5%;
+	}
+}
 body,
 button,
 input,
@@ -476,7 +481,7 @@ textarea {
 	color: var(--global-font-color);
 	font-family: var(--global-font-family);
 	font-size: var(--global-font-size)px;
-	font-size: calc(var(--global-font-size) / 16)rem;
+	font-size: calc(var(--global-font-size)rem / 16);
 	line-height: var(--global-font-line-height);
 }
 
@@ -601,8 +606,8 @@ img {
 	display: block;
 	max-width: 100%;
 }
-img:not(.height-set) {	
-	height: auto;	
+img:not(.height-set) {
+	height: auto;
 }
 
 figure {
@@ -738,28 +743,35 @@ textarea {
 .custom-logo-link,
 .affiliate-logo-link {
 	display: inline-block;
+	vertical-align: bottom;
 }
 
-.site-branding {
+.donation-ctnr {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	left: 0.5rem;
+	right: 0.5rem;
 }
 .custom-logo {
 	width: auto;
-	margin-left: auto;
-	margin-right: auto;
 	height: 4rem;
+	max-height: 4rem;
+	margin: 0 auto;
 }
 .affiliate-logo-link {
-	position: absolute;
+	max-width: 15%;
 }
-.affiliate-logo-link + .custom-logo-link {
-	flex: 2;
+.custom-logo-link-ctnr {
+	width: 100%;
+	text-align: center;
+	margin: auto;
+	max-width: 60%;
+	position: relative;
 }
 
 .donation-button {
-	position: absolute;
-	right: 0.5rem;
 	display: inline-block;
 	border: none;
 	border-radius: 18px;
@@ -772,6 +784,28 @@ textarea {
 	background-size: auto 200%;
 	background-position: 0 0;
 	font-size: .875rem;
+}
+.main-navigation .donation-button {
+	position: absolute;
+	right: 0.5rem;
+}
+
+.donation-button:hover {
+	animation: colors 10s linear infinite;
+}
+@keyframes colors {
+	25% {
+		background: var(--global-red);
+	}
+	50% {
+		background: var(--global-blue);
+	}
+	75% {
+		background: var(--global-green);
+	}
+	100% {
+		background: var(--global-yellow);
+	}
 }
 .donation-button-span {
 	color: #fff;
@@ -796,7 +830,8 @@ textarea {
 	line-height: 1.4;
 	word-wrap: break-word;
 }
-.primary-menu-container .custom-logo {
+.main-navigation .custom-logo-link,
+.main-navigation .donation-button {
 	display: none;
 }
 @media (--sidebar-query) {
@@ -809,13 +844,15 @@ textarea {
 		left: 0;
 		right: 0;
 		border-bottom: 1px solid;
-		
 	}
 	.masthead-pre-fixed .main-navigation {
 		position: fixed;
 		top: -4rem;
 		transform: translate3d(0, 0, 0);
 		transition: 0.5s 0s;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
 
 	.masthead-fixed .main-navigation {
@@ -827,8 +864,16 @@ textarea {
 		max-width: 1280px;
 		margin: auto;
 	}
-	.masthead-pre-fixed .primary-menu-container .custom-logo {
-		display: block;
+	.masthead-pre-fixed .main-navigation .custom-logo-link,
+	.masthead-pre-fixed .main-navigation .donation-button {
+		display: inline-block;
+		position: absolute;
+	}
+	.masthead-pre-fixed .main-navigation .custom-logo {
+		height: 2rem;
+	}
+	.masthead-pre-fixed .main-navigation .custom-logo-link {
+		left: 0.5rem;
 	}
 	.secondary-navigation {
 		display: flex;
@@ -851,29 +896,29 @@ textarea {
 	border: none;
 	background: transparent;
 	position: fixed;
-	top: 1rem;
+	top: 0.75rem;
 	left: 1rem;
-	padding: 0.5rem;
+	padding: 0.5rem 0;
 }
 .menu-toggle span {
 	display: inline-block;
-    width: 2.1rem;
-    height: 3px;
-    position: relative;
-    top: 0;
-    vertical-align: middle;
-    background: linear-gradient(90deg, var(--global-green) 50%, var(--global-red) 0);
-    transition: all ease .6s;
+	width: 2.1rem;
+	height: 3px;
+	position: relative;
+	top: 0;
+	vertical-align: middle;
+	background: linear-gradient(90deg, var(--global-green) 50%, var(--global-red) 0);
+	transition: all ease .6s;
 }
 .menu-toggle span:after,
 .menu-toggle span:before {
-    position: absolute;
-    content: '';
-    display: inline-block;
-    width: inherit;
-    height: inherit;
-    transition: inherit;
-    left: 0;
+	position: absolute;
+	content: '';
+	display: inline-block;
+	width: inherit;
+	height: inherit;
+	transition: inherit;
+	left: 0;
 	outline: 1px solid transparent;
 }
 .menu-toggle span:before{
@@ -892,10 +937,7 @@ textarea {
 .main-navigation a {
 	display: block;
 }
-.main-navigation a:hover,
-.main-navigation a:focus {
-	text-decoration: underline;
-}
+
 .secondary-navigation {
 	margin: 0 auto;
 	width: calc(100% - 2rem);
@@ -947,6 +989,24 @@ textarea {
 }
 
 @media (--narrow-menu-query) {
+	.site-header {
+		padding: 0;
+	}
+	.site-branding {
+		border-top: 3.5rem solid;
+		padding: 1.5rem 0;
+	}
+	.donation-ctnr {
+		top: 0.5rem;
+		justify-content: flex-end;
+		right: 0.5rem;
+	}
+	.affiliate-logo-link {
+		margin-right: 0.5rem;
+	}
+	.donation-ctnr .affiliate-logo {
+		height: 34px;
+	}
 	.sitenav-toggled-on .site-header ~ *,
 	.sitenav-toggled-on .site-footer {
 		display: none;
@@ -954,20 +1014,21 @@ textarea {
 	.site-header {
 		transition: 0.5s;
 	}
-	.custom-logo-link {
-		max-width: 60%;
-	}
-	.custom-logo {
-		margin-left: auto;
-		margin-right: auto;
-	}
 	.sitenav-toggled-on .site-header {
-		padding: 1.5rem 2.5rem;
-		border: 5px solid;
 		background: #273b791a;
+	}
+	.primary-menu-container {
+		transform: translate3d(0, 120px, 0);
+		opacity: 0;
+		transition: 1s ease-in-out;
+	}
+	.toggled-on .primary-menu-container{
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
 	}
 	.main-navigation.toggled-on .menu {
 		display: block;
+		padding: 0 1.5rem 3rem ;
 	}
 	.main-navigation ul ul li {
 		padding-left: 2rem;
@@ -1045,9 +1106,8 @@ textarea {
 	.secondary-navigation .menu {
 		display: flex;
 		flex-wrap: wrap;
-		align-items: center;	
+		align-items: center;
 	}
-	
 	.main-navigation .menu {
 		justify-content: center;
 	}
@@ -1198,7 +1258,7 @@ textarea {
 .CeraStencilPro-Regular { font-family: CeraStencilPro-Regular, sans-serif; }
 
 
-.et_builder_outer_content h2 {
+#et_builder_outer_content.et_builder_outer_content h2 {
 	font-size: 3.25rem;
 	text-transform: uppercase;
 }
@@ -1213,7 +1273,7 @@ textarea {
 	right: 0;
 	height: 5px;
 	background: var(--global-blue);
-	background-image: 
+	background-image:
 		linear-gradient(90deg, var(--global-yellow) 200px, transparent 0),
 		linear-gradient(90deg, var(--global-red) 600px, transparent 0),
 		linear-gradient(90deg, var(--global-green) 800px, transparent 0);
@@ -1250,6 +1310,9 @@ textarea {
 	font-weight: bold;
 	font-size: 0.75rem;
 }
+.et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form .form-textarea {
+	padding: 0;
+}
 .et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form p:last-of-type {
 	text-align: right;
 }
@@ -1276,7 +1339,13 @@ textarea {
 }
 .et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form input[type=submit] {
 	color: #fff;
-	background: var(--global-font-color);
+	background: transparent;
+	border: 2px solid white;
 	padding-left: 2rem;
 	padding-right: 2rem;
+	transition: .3s ease-in-out;
+}
+.et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form input[type=submit]:hover {
+	color: var(--global-font-color);
+	background: white;
 }

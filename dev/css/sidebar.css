@@ -22,9 +22,6 @@
 	.primary-sidebar {
 		padding: 0;
 	}
-	.primary-sidebar > section {
-	
-	}
 	.secondary-sidebar {
 		display: grid;
 		grid-gap: 2rem;
