@@ -310,7 +310,7 @@ if ( ! function_exists( 'pehaarig_custom_logo' ) ) :
 		$html = '';
 		if ( $id ) {
 			$custom_logo_attr = array(
-				'class'    => 'custom-logo height-set',
+				'class'    => 'custom-logo height-set skip-lazy',
 				'itemprop' => 'logo',
 				'height' => max( $height, 48 )
 			);
@@ -398,12 +398,11 @@ if ( ! function_exists( 'pehaarig_custom_logo_affiliate' ) ) :
 		$html = '';
 		if ( $custom_logo_id ) {
 			$custom_logo_attr = array(
-				'class'    => 'custom-logo affiliate-logo',
+				'class'    => 'custom-logo affiliate-logo skip-lazy',
 				'height' => 64,
 			);
 
-			$image_alt = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );
-			
+			$image_alt = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );			
 			$html = sprintf( '<a href="%1$s" class="custom-logo-link affiliate-logo-link" rel="home" itemprop="url">%2$s</a>',
 				$url ? esc_url( $url ) : esc_url( home_url( '/' ) ),
 				wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr )
