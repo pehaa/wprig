@@ -23,7 +23,6 @@ function initMasterhead() {
 
 	// Toggle the submenu when we click the dropdown button.
 	window.addEventListener( 'scroll', function( event ) {
-		console.log( window.scrollY );
 		if ( window.scrollY > threshold0 ) {
 			MASTHEAD.classList.add( 'masthead-pre-fixed' );
 		} else {

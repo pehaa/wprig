@@ -28,7 +28,8 @@
 			)
 		);
 		?>
-	<nav><!-- .wrapper -->
+	</nav><!-- .wrapper -->
+	<a id="pehaarig-to-top" href="#body" aria-label="<?php esc_html_e( 'Back to top', 'pehaarig' ); ?>" class="pehaarig-to-top"><i class="icon arrow-up"></i></a>
 </footer><!-- #colophon -->
 
 <?php wp_footer(); ?>

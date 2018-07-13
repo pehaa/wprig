@@ -1234,6 +1234,53 @@ textarea {
 .site-footer .custom-logo {
 	max-height: 3rem;
 }
+
+.pehaarig-to-top {
+	opacity: 0;
+	visibility: hidden;
+	position: fixed;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	transition: 0.5s;
+	display: block;
+	background: var(--global-font-color);
+	color: #fff;
+	width: 48px;
+	height: 48px;
+	border-radius: 5px;
+	z-index: 99999;
+}
+.pehaarig-to-top:hover {
+	background: var(--global-blue);
+}
+.pehaarig-to-top-active {
+	opacity: 1;
+	visibility: visible;
+}
+
+.arrow-up.icon {
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: currentColor;
+  top: 19px;
+  left: 22px;
+
+}
+
+.arrow-up.icon:before {
+	content: '';
+	position: absolute;
+	left: -5px;
+	top: 1px;
+	width: 14px;
+	height: 14px;
+	border-top: solid 3px var(--global-yellow);
+	border-right: solid 3px var(--global-red);
+	transform: rotate(-45deg);
+}
+
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -1262,10 +1309,18 @@ textarea {
 	font-size: 3.25rem;
 	text-transform: uppercase;
 }
-.maintenant-deco {
+.maintenant-deco,
+.maintenant-deco-1 {
 	position: relative;
 }
-.maintenant-deco:after {
+.maintenant-deco {
+	background: var(--global-blue);
+}
+.maintenant-deco-1 {
+	background: var(--global-font-color);
+}
+.maintenant-deco:after,
+.maintenant-deco-1:after {
 	content: "";
 	position: absolute;
 	bottom: 0;
@@ -1279,6 +1334,7 @@ textarea {
 		linear-gradient(90deg, var(--global-green) 800px, transparent 0);
 
 }
+
 @media screen and (min-width: 820px) {
 	.wpcf7-form {
 	display: flex;
