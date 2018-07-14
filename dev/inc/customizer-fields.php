@@ -120,6 +120,24 @@ $pehaarig_customizer_fields = array(
 			),
 		),
 	),
+	'pehaarig_social' => array(
+		'section' => array(
+			'title' => esc_html__( 'Follow us footer buttons', 'wprig' ),
+			'panel' => 'pehaarig',
+		),
+		'settings' => array(
+			'pehaarig_linkedin' => array(
+				'setting_array' => array(
+					'sanitize_callback' => 'PeHaaThemes_Sanitization::sanitize_url',
+				),
+				'control_array' => array(
+					'type'        => 'text',
+					'label'       => esc_html__( 'Linkedin URL', 'wprig' ),
+					'description' => esc_html__( 'Paste the url of your linkedin profile.', 'wprig' ),
+				),
+			),
+		),
+	),
 	'yaga_footer_and_scripts' => array(
 		'section' => array(
 			'title' => esc_html__( 'Custom Scripts and Footer', 'wprig' ),

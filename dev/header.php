@@ -70,6 +70,7 @@
 					array(
 						'theme_location' => 'primary',
 						'menu_id'        => 'primary-menu',
+						'menu_class'     => 'main-navigation-menu menu',
 						'container'      => 'ul',
 					)
 				);

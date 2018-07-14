@@ -305,5 +305,5 @@ gulp.task('svgstore', function () {
     return gulp
         .src('dev/images/*.svg')
         .pipe(svgstore())
-        .pipe(gulp.dest('dev/images/dest'));
+        .pipe(gulp.dest('images/dest'));
 });

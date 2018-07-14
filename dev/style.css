@@ -875,11 +875,7 @@ textarea {
 	.masthead-pre-fixed .main-navigation .custom-logo-link {
 		left: 0.5rem;
 	}
-	.secondary-navigation {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
+	
 }
 
 /*--------------------------------------------------------------
@@ -940,13 +936,19 @@ textarea {
 
 .secondary-navigation {
 	margin: 0 auto;
-	width: calc(100% - 2rem);
+	width: calc(100% - 6rem);
 	max-width: var(--wrapper-max-width)rem;
 }
 .main-navigation ul,
-.secondary-navigation ul {
-	display: block;
+.secondary-navigation-menu,
+.footer-socials {
 	list-style: none;
+
+}
+.main-navigation-menu,
+.secondary-navigation-menu,
+.footer-socials {
+	display: block;
 	margin: 0;
 	padding: 0;
 }
@@ -954,12 +956,12 @@ textarea {
 .main-navigation li {
 	position: relative;
 }
-.main-navigation .menu > li > a {
+.main-navigation-menu > li > a {
 	text-transform: uppercase;
 	text-decoration: none;
 	padding: 1.25rem 0.5rem;
 }
-.main-navigation .menu > li > a:after {
+.main-navigation-menu > li > a:after {
 	content: '';
 	display: block;
 	position: absolute;
@@ -971,11 +973,11 @@ textarea {
 	transform: translateY(10px);
 	transition: .5s ease-in-out;
 }
-.main-navigation .menu > li:hover > a:after {
+.main-navigation-menu > li:hover > a:after {
 	transform: translateY(0px);
 	opacity: 1;
 }
-.main-navigation ul ul li {
+.main-navigation-menu ul li {
 	padding-left: 1rem;
 }
 
@@ -984,7 +986,7 @@ textarea {
 	display: none;
 }
 
-.main-navigation .menu {
+.main-navigation-menu {
 	display: none;
 }
 
@@ -1049,21 +1051,17 @@ textarea {
 		display: none;
 	}
 
-	.main-navigation ul li a {
+	.main-navigation-menu a {
 		padding: .4rem 0.5rem;
 	}
-	.secondary-navigation ul li a {
-		padding: 0 0.5rem;
-		font-weight: var(--global-font-weight-bold);
+	.main-navigation-menu li {
+		margin: 0 0 0 0.5rem;
 	}
-	.main-navigation ul li {
-		margin: 0 0 0 0.5em;
-	}
-	.main-navigation ul li:first-child {
+	.main-navigation-menu li:first-child {
 		margin-left: 0;
 	}
 
-	.main-navigation ul ul {
+	.main-navigation-menu ul {
 		visibility: hidden;
 		opacity: 0;
 		transform: translate3d(0, 20px, 0);
@@ -1102,13 +1100,13 @@ textarea {
 		min-height: 100%;
 	}
 
-	.main-navigation .menu,
-	.secondary-navigation .menu {
+	.main-navigation-menu,
+	.secondary-navigation-menu {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 	}
-	.main-navigation .menu {
+	.main-navigation-menu {
 		justify-content: center;
 	}
 
@@ -1128,6 +1126,7 @@ textarea {
 		height: var(--dropdown-symbol-width);
 		font-size: inherit;
 		line-height: inherit;
+		color: inherit;
 		margin: 0;
 		padding: 0;
 		border: none;
@@ -1144,7 +1143,7 @@ textarea {
 		top: 35%;
 		width: 60%;
 		height: 60%;
-		border: solid black;
+		border: solid;
 		border-width: 0 2px 2px 0;
 		transform: translateY(-50%) rotate(45deg);
 	}
@@ -1226,10 +1225,20 @@ textarea {
 	padding: 1.5rem;
 	background: var(--global-font-color);
 	color: #fff;
+	text-align: center;
 }
 
 .site-info {
 	text-align: center;
+}
+
+.secondary-navigation-menu {
+	flex: 2;
+	margin: 1.5rem 0;
+}
+.secondary-navigation-menu a {
+	padding: 0 0.5rem;
+	font-weight: var(--global-font-weight-bold);
 }
 .site-footer .custom-logo {
 	max-height: 3rem;
@@ -1240,7 +1249,7 @@ textarea {
 	visibility: hidden;
 	position: fixed;
 	bottom: 1.5rem;
-	right: 1.5rem;
+	right: 0.75rem;
 	transition: 0.5s;
 	display: block;
 	background: var(--global-font-color);
@@ -1279,8 +1288,22 @@ textarea {
 	border-right: solid 3px var(--global-red);
 	transform: rotate(-45deg);
 }
-
-
+.footer-socials svg {
+	fill: currentColor;
+	width: 2rem;
+	height: 2rem;
+	vertical-align: bottom;
+}
+@media (--sidebar-query) {
+	.secondary-navigation {
+		display: flex;
+		align-items: center;
+	}
+	.secondary-navigation-menu {
+	flex: 2;
+	margin: 0 1.5rem;
+}
+}
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -1404,4 +1427,14 @@ textarea {
 .et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form input[type=submit]:hover {
 	color: var(--global-font-color);
 	background: white;
+}
+.pehaarig-keyboard-outline, *:focus {
+	outline: 2px dotted!important;
+	outline-offset: -8px;
+}
+.filtr-active.maad-button.pehaarig-keyboard-outline {
+	outline: 2px dotted white!important;
+}
+.dropdown-toggle.pehaarig-keyboard-outline {
+	outline-offset: 2px;
 }

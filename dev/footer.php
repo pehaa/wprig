@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package wprig
+ * @package pehaarig
  */
 
 ?>
@@ -27,11 +27,26 @@
 				'depth'          => 1,
 			)
 		);
-		?>
+
+		$linkedin_profile = get_theme_mod( 'pehaarig_linkedin' );
+		if ( $linkedin_profile ) { ?>
+			<ul class="footer-socials">
+				<li>
+					<a href="<?php echo esc_url( $linkedin_profile ); ?>" aria-label="<?php echo esc_html( 'Visit out Linkedin Profile', 'pehaarig' ); ?>">
+						<svg class="pehaarig-svg">
+							<use xlink:href="#linkedin" />
+						</svg>
+					</a>
+				</li>
+			</ul>
+		<?php } ?>
+		
 	</nav><!-- .wrapper -->
 	<a id="pehaarig-to-top" href="#body" aria-label="<?php esc_html_e( 'Back to top', 'pehaarig' ); ?>" class="pehaarig-to-top"><i class="icon arrow-up"></i></a>
 </footer><!-- #colophon -->
-
+<div class="u-visually-hidden">
+	<?php echo file_get_contents( get_template_directory() . '/images/dest/images.svg' ); ?>
+</div>
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -258,10 +258,15 @@ function wprig_scripts() {
 
 		// Enqueue the masterhead script.
 		if ( apply_filters( 'pehaarig_enable_back_to_top', true ) ) {
-			wp_enqueue_script( 'wprig-backtotop', get_theme_file_uri( '/js/backtotop.js' ), array(), '20180514', true );
-			wp_script_add_data( 'wprig-backtotop', 'async', true );
+			wp_enqueue_script( 'pehaarig-backtotop', get_theme_file_uri( '/js/backtotop.js' ), array(), '20180514', true );
+			wp_script_add_data( 'pehaarig-backtotop', 'async', true );
 		}
 
+		//Enqueue accessibility fix id divi builder is enabled
+		if ( class_exists( 'ET_Builder_Plugin' ) ) {
+			wp_enqueue_script( 'pehaarig-access', get_theme_file_uri( '/js/accessibility-fix.js' ), array(), '20180514', true );
+			wp_script_add_data( 'pehaarig-access', 'async', true );
+		}
 		// Enqueue skip-link-focus script.
 		wp_enqueue_script( 'wprig-skip-link-focus-fix', get_theme_file_uri( '/js/skip-link-focus-fix.js' ), array(), '20180514', false );
 		wp_script_add_data( 'wprig-skip-link-focus-fix', 'defer', true );
