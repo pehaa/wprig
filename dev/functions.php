@@ -326,7 +326,21 @@ require_once get_template_directory() . '/pluggable/disable-emoji.php';
 
 add_filter( 'et_project_posttype_rewrite_args', 'pehaarig_project_posttype_rewrite_args' );
 
+
+/**
+ * projects slug rewritten to projet
+ */
 function pehaarig_project_posttype_rewrite_args( $rewrite ) {
 	$rewrite['slug'] = 'projet';
 	return $rewrite;
 }
+
+/**
+ * Disable dashicons for non logged-in users
+ */
+function pehaaerig_dequeue_dashicon() {
+	if ( ! is_user_logged_in() ) {
+        wp_deregister_style( 'dashicons' );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'pehaaerig_dequeue_dashicon' );
