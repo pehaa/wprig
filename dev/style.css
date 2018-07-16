@@ -873,7 +873,7 @@ textarea {
 		height: 2rem;
 	}
 	.masthead-pre-fixed .main-navigation .custom-logo-link {
-		left: 0.5rem;
+		left: 1rem;
 	}
 	
 }
@@ -980,7 +980,14 @@ textarea {
 .main-navigation-menu ul li {
 	padding-left: 1rem;
 }
-
+.main-navigation-menu ul a {
+	transition: 0.4s;
+	border-bottom: 1px solid transparent;
+}
+.main-navigation-menu ul a:hover {
+	color: var(--global-blue);
+	border-bottom: 1px solid var(--global-blue);
+}
 .main-navigation .dropdown,
 .main-navigation button.dropdown-toggle {
 	display: none;
@@ -1035,13 +1042,13 @@ textarea {
 	.main-navigation ul ul li {
 		padding-left: 2rem;
 	}
-	.main-navigation .menu > li  a {
+	.main-navigation-menu > li  a {
 		text-transform: uppercase;
 		text-decoration: none;
 		padding: 1.25rem 0;
 		border-top: 1px solid;
 	}
-	.main-navigation .menu > li > a:after {
+	.main-navigation-menu > li > a:after {
 		content: none;
 	}
 }
@@ -1089,9 +1096,8 @@ textarea {
 		margin-left: 0;
 	}
 
-	.main-navigation ul ul li a {
-		width: 218px;
-		background: none;
+	.main-navigation-menu ul li a {
+		width: 14rem;
 	}
 
 	.main-navigation ul ul ul {
@@ -1336,10 +1342,10 @@ textarea {
 .maintenant-deco-1 {
 	position: relative;
 }
-.maintenant-deco {
+.maintenant-deco:after {
 	background: var(--global-blue);
 }
-.maintenant-deco-1 {
+.maintenant-deco-1:after {
 	background: var(--global-font-color);
 }
 .maintenant-deco:after,
@@ -1350,12 +1356,21 @@ textarea {
 	left: 0;
 	right: 0;
 	height: 5px;
-	background: var(--global-blue);
 	background-image:
-		linear-gradient(90deg, var(--global-yellow) 200px, transparent 0),
-		linear-gradient(90deg, var(--global-red) 600px, transparent 0),
-		linear-gradient(90deg, var(--global-green) 800px, transparent 0);
+		linear-gradient(90deg, var(--global-yellow) 20%, transparent 0),
+		linear-gradient(90deg, var(--global-red) 35%, transparent 0),
+		linear-gradient(90deg, var(--global-green) 80%, transparent 0);
 
+}
+
+.maintenant-deco-full:after {
+	height: 100%;
+}
+
+@media (min-width:981px) {
+	.maintenant-deco-small:after {
+		content: none;
+	}
 }
 
 @media screen and (min-width: 820px) {
@@ -1428,13 +1443,22 @@ textarea {
 	color: var(--global-font-color);
 	background: white;
 }
-.pehaarig-keyboard-outline, *:focus {
+@media (max-width: 980px) {
+	.et_divi_builder #et_builder_outer_content .et_pb_column.et_pb_column_empty {
+		background-image: none!important;
+	}
+}
+
+
+/* accessibility */
+.pehaarig-keyboard-outline {
 	outline: 2px dotted!important;
 	outline-offset: -8px;
 }
 .filtr-active.maad-button.pehaarig-keyboard-outline {
 	outline: 2px dotted white!important;
 }
+.site-footer .pehaarig-keyboard-outline,
 .dropdown-toggle.pehaarig-keyboard-outline {
 	outline-offset: 2px;
 }

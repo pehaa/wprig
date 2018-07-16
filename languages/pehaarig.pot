@@ -57,6 +57,10 @@ msgstr ""
 msgid "Custom Page Template Full Width"
 msgstr ""
 
+#: footer.php:46
+msgid "Back to top"
+msgstr ""
+
 #: functions.php:47
 msgid "Primary"
 msgstr ""
@@ -65,7 +69,7 @@ msgstr ""
 msgid "Secondary"
 msgstr ""
 
-#: functions.php:196, inc/customizer-fields.php:201
+#: functions.php:196, inc/customizer-fields.php:219
 msgid "Sidebar"
 msgstr ""
 
@@ -170,370 +174,382 @@ msgid "Paste the url of your donation organisation."
 msgstr ""
 
 #: inc/customizer-fields.php:125
-msgid "Custom Scripts and Footer"
+msgid "Follow us footer buttons"
 msgstr ""
 
 #: inc/customizer-fields.php:135
-msgid "Header Tracking Code"
+msgid "Linkedin URL"
 msgstr ""
 
 #: inc/customizer-fields.php:136
-msgid "Paste your header-destined tracking code here (e.g. Google Analytics)."
+msgid "Paste the url of your linkedin profile."
 msgstr ""
 
-#: inc/customizer-fields.php:146
-msgid "Footer Tracking Code"
+#: inc/customizer-fields.php:143
+msgid "Custom Scripts and Footer"
 msgstr ""
 
-#: inc/customizer-fields.php:147
-msgid "Paste your footer-destined tracking code here."
+#: inc/customizer-fields.php:153
+msgid "Header Tracking Code"
 msgstr ""
 
 #: inc/customizer-fields.php:154
-msgid "Custom copyright text (left)"
+msgid "Paste your header-destined tracking code here (e.g. Google Analytics)."
 msgstr ""
 
-#: inc/customizer-fields.php:155
-msgid "You can modify the text displayed in the left footer copyright area."
+#: inc/customizer-fields.php:164
+msgid "Footer Tracking Code"
 msgstr ""
 
-#: inc/customizer-fields.php:162
-msgid "Custom copyright text (right)"
-msgstr ""
-
-#: inc/customizer-fields.php:163
-msgid "You can modify the text displayed in the right footer copyright area."
+#: inc/customizer-fields.php:165
+msgid "Paste your footer-destined tracking code here."
 msgstr ""
 
 #: inc/customizer-fields.php:172
-msgid "Fixed footer"
+msgid "Custom copyright text (left)"
 msgstr ""
 
 #: inc/customizer-fields.php:173
-msgid "Enable fixed (parallax) footer behavior applied on wide screens over 1280px."
+msgid "You can modify the text displayed in the left footer copyright area."
+msgstr ""
+
+#: inc/customizer-fields.php:180
+msgid "Custom copyright text (right)"
 msgstr ""
 
 #: inc/customizer-fields.php:181
+msgid "You can modify the text displayed in the right footer copyright area."
+msgstr ""
+
+#: inc/customizer-fields.php:190
+msgid "Fixed footer"
+msgstr ""
+
+#: inc/customizer-fields.php:191
+msgid "Enable fixed (parallax) footer behavior applied on wide screens over 1280px."
+msgstr ""
+
+#: inc/customizer-fields.php:199
 msgid "Dashboard Login"
 msgstr ""
 
-#: inc/customizer-fields.php:183
+#: inc/customizer-fields.php:201
 msgid "These settings concern the login screen and cannot be previewed within this customizer screen. To see the changes you need to Save and Publish first, then go to the <a href=\"%s\" target=\"_blank\">login screen.</a>"
 msgstr ""
 
-#: inc/customizer-fields.php:193
+#: inc/customizer-fields.php:211
 msgid "Login Logo"
 msgstr ""
 
-#: inc/customizer-fields.php:194
+#: inc/customizer-fields.php:212
 msgid "Upload your logo, the default height is %s px"
 msgstr ""
 
-#: inc/customizer-fields.php:202
+#: inc/customizer-fields.php:220
 msgid "The sidebar widgets are only displayed if there are widgets associated with the Sidebar Widgets Area."
 msgstr ""
 
-#: inc/customizer-fields.php:211
+#: inc/customizer-fields.php:229
 msgid "Sidebar position"
 msgstr ""
 
-#: inc/customizer-fields.php:212
+#: inc/customizer-fields.php:230
 msgid "Choose the sidebar position."
 msgstr ""
 
-#: inc/customizer-fields.php:215
+#: inc/customizer-fields.php:233
 msgid "Left"
 msgstr ""
 
-#: inc/customizer-fields.php:216
+#: inc/customizer-fields.php:234
 msgid "Right"
 msgstr ""
 
-#: inc/customizer-fields.php:225
+#: inc/customizer-fields.php:243
 msgid "Sidebar on blog page"
 msgstr ""
 
-#: inc/customizer-fields.php:226, inc/customizer-fields.php:260
+#: inc/customizer-fields.php:244, inc/customizer-fields.php:278
 msgid "Choose your blog layout."
 msgstr ""
 
-#: inc/customizer-fields.php:235
+#: inc/customizer-fields.php:253
 msgid "Blog"
 msgstr ""
 
-#: inc/customizer-fields.php:236
+#: inc/customizer-fields.php:254
 msgid "Customize the way the blog pages (index, categories) are displayed"
 msgstr ""
 
-#: inc/customizer-fields.php:245
+#: inc/customizer-fields.php:263
 msgid "Pagination"
 msgstr ""
 
-#: inc/customizer-fields.php:246
+#: inc/customizer-fields.php:264
 msgid "Choose your pagination option."
 msgstr ""
 
-#: inc/customizer-fields.php:249
+#: inc/customizer-fields.php:267
 msgid "Standard Pagination"
 msgstr ""
 
-#: inc/customizer-fields.php:250
+#: inc/customizer-fields.php:268
 msgid "Load More Button"
 msgstr ""
 
-#: inc/customizer-fields.php:259
+#: inc/customizer-fields.php:277
 msgid "Blog Layout"
 msgstr ""
 
-#: inc/customizer-fields.php:263
+#: inc/customizer-fields.php:281
 msgid "Grid View"
 msgstr ""
 
-#: inc/customizer-fields.php:264
+#: inc/customizer-fields.php:282
 msgid "One Column View"
 msgstr ""
 
-#: inc/customizer-fields.php:273
+#: inc/customizer-fields.php:291
 msgid "Truncate title"
 msgstr ""
 
-#: inc/customizer-fields.php:274
+#: inc/customizer-fields.php:292
 msgid "Truncate the post title (...) so that it does not take more than one line."
 msgstr ""
 
-#: inc/customizer-fields.php:283
+#: inc/customizer-fields.php:301
 msgid "Above the post title"
 msgstr ""
 
-#: inc/customizer-fields.php:284
+#: inc/customizer-fields.php:302
 msgid "Choose what to display above the post title"
 msgstr ""
 
-#: inc/customizer-fields.php:287, inc/customizer-fields.php:299
+#: inc/customizer-fields.php:305, inc/customizer-fields.php:317
 msgid "Date"
 msgstr ""
 
-#: inc/customizer-fields.php:288
+#: inc/customizer-fields.php:306
 msgid "Category"
 msgstr ""
 
-#: inc/customizer-fields.php:289, inc/customizer-fields.php:309
+#: inc/customizer-fields.php:307, inc/customizer-fields.php:327
 msgid "Author"
 msgstr ""
 
-#: inc/customizer-fields.php:290
+#: inc/customizer-fields.php:308
 msgid "Empty"
 msgstr ""
 
-#: inc/customizer-fields.php:300
+#: inc/customizer-fields.php:318
 msgid "Display date in bottom meta area"
 msgstr ""
 
-#: inc/customizer-fields.php:310
+#: inc/customizer-fields.php:328
 msgid "Display author in bottom meta area"
 msgstr ""
 
-#: inc/customizer-fields.php:319
+#: inc/customizer-fields.php:337
 msgid "Categories"
 msgstr ""
 
-#: inc/customizer-fields.php:320
+#: inc/customizer-fields.php:338
 msgid "Display categories in bottom meta area"
 msgstr ""
 
-#: inc/customizer-fields.php:329, inc/customizer-fields.php:338
+#: inc/customizer-fields.php:347, inc/customizer-fields.php:356
 msgid "Comments"
 msgstr ""
 
-#: inc/customizer-fields.php:330
+#: inc/customizer-fields.php:348
 msgid "Display comments link in bottom meta area"
 msgstr ""
 
-#: inc/customizer-fields.php:339
+#: inc/customizer-fields.php:357
 msgid "Customize the way the comments are displayed"
 msgstr ""
 
-#: inc/customizer-fields.php:349
+#: inc/customizer-fields.php:367
 msgid "Comments display"
 msgstr ""
 
-#: inc/customizer-fields.php:352
+#: inc/customizer-fields.php:370
 msgid "Always show"
 msgstr ""
 
-#: inc/customizer-fields.php:353
+#: inc/customizer-fields.php:371
 msgid "Toggle (closed on page load)"
 msgstr ""
 
-#: inc/customizer-fields.php:354
+#: inc/customizer-fields.php:372
 msgid "Toggle (opened on page load)"
 msgstr ""
 
-#: inc/customizer-fields.php:360
+#: inc/customizer-fields.php:378
 msgid "Discussion"
 msgstr ""
 
-#: inc/customizer-fields.php:363
+#: inc/customizer-fields.php:381
 msgid "Comments area title"
 msgstr ""
 
-#: inc/customizer-fields.php:369
+#: inc/customizer-fields.php:387
 msgid "Leave a reply"
 msgstr ""
 
-#: inc/customizer-fields.php:372
+#: inc/customizer-fields.php:390
 msgid "Comments area subtitle"
 msgstr ""
 
-#: inc/customizer-fields.php:381
+#: inc/customizer-fields.php:399
 msgid "Avatars display"
 msgstr ""
 
-#: inc/customizer-fields.php:384
+#: inc/customizer-fields.php:402
 msgid "Visible, circle"
 msgstr ""
 
-#: inc/customizer-fields.php:385
+#: inc/customizer-fields.php:403
 msgid "Visible, square"
 msgstr ""
 
-#: inc/customizer-fields.php:386
+#: inc/customizer-fields.php:404
 msgid "Not displayed"
 msgstr ""
 
-#: inc/customizer-fields.php:392
+#: inc/customizer-fields.php:410
 msgid "Your email address will not be published. Required fields are marked *"
 msgstr ""
 
-#: inc/customizer-fields.php:395
+#: inc/customizer-fields.php:413
 msgid "Note before form"
 msgstr ""
 
-#: inc/customizer-fields.php:403
+#: inc/customizer-fields.php:421
 msgid "Fonts"
 msgstr ""
 
-#: inc/customizer-fields.php:412
+#: inc/customizer-fields.php:430
 msgid "Body Font"
 msgstr ""
 
-#: inc/customizer-fields.php:413
+#: inc/customizer-fields.php:431
 msgid "Quickly add a custom Google Font for body from <a href=\"%s\" target=\"_blank\">Google Font Directory.</a> Make sure that the italic, bold and bold italic styles exist. Set the normal and bold weights in the fields below."
 msgstr ""
 
-#: inc/customizer-fields.php:422
+#: inc/customizer-fields.php:440
 msgid "Body Font Family"
 msgstr ""
 
-#: inc/customizer-fields.php:423, inc/customizer-fields.php:469
+#: inc/customizer-fields.php:441, inc/customizer-fields.php:487
 msgid "Generic font family for font subsitution."
 msgstr ""
 
-#: inc/customizer-fields.php:426, inc/customizer-fields.php:472
+#: inc/customizer-fields.php:444, inc/customizer-fields.php:490
 msgid "Serif"
 msgstr ""
 
-#: inc/customizer-fields.php:427, inc/customizer-fields.php:473
+#: inc/customizer-fields.php:445, inc/customizer-fields.php:491
 msgid "Sans Serif"
 msgstr ""
 
-#: inc/customizer-fields.php:428, inc/customizer-fields.php:474
+#: inc/customizer-fields.php:446, inc/customizer-fields.php:492
 msgid "Monospace"
 msgstr ""
 
-#: inc/customizer-fields.php:429, inc/customizer-fields.php:475
+#: inc/customizer-fields.php:447, inc/customizer-fields.php:493
 msgid "Cursive"
 msgstr ""
 
-#: inc/customizer-fields.php:430, inc/customizer-fields.php:476
+#: inc/customizer-fields.php:448, inc/customizer-fields.php:494
 msgid "Fantasy"
 msgstr ""
 
-#: inc/customizer-fields.php:439, inc/customizer-fields.php:485
+#: inc/customizer-fields.php:457, inc/customizer-fields.php:503
 msgid "Base body font-face weight"
 msgstr ""
 
-#: inc/customizer-fields.php:449
+#: inc/customizer-fields.php:467
 msgid "Bold body font-face weight"
 msgstr ""
 
-#: inc/customizer-fields.php:459
+#: inc/customizer-fields.php:477
 msgid "Headings Font"
 msgstr ""
 
-#: inc/customizer-fields.php:468
+#: inc/customizer-fields.php:486
 msgid "Headings Font Family"
 msgstr ""
 
-#: inc/customizer-fields.php:495
+#: inc/customizer-fields.php:513
 msgid "Caps"
 msgstr ""
 
-#: inc/customizer-fields.php:496
+#: inc/customizer-fields.php:514
 msgid "Check here to capitalize all headings."
 msgstr ""
 
-#: inc/customizer-fields.php:505
+#: inc/customizer-fields.php:523
 msgid "Navigation and Buttons"
 msgstr ""
 
-#: inc/customizer-fields.php:506
+#: inc/customizer-fields.php:524
 msgid "Check here to use the headings font family for the navigation and buttons."
 msgstr ""
 
-#: inc/customizer-fields.php:514
+#: inc/customizer-fields.php:532
 msgid "Colors"
 msgstr ""
 
-#: inc/customizer-fields.php:525
+#: inc/customizer-fields.php:543
 msgid "Link"
 msgstr ""
 
-#: inc/customizer-fields.php:536
+#: inc/customizer-fields.php:554
 msgid "Link on Hover"
 msgstr ""
 
-#: inc/customizer-fields.php:547
+#: inc/customizer-fields.php:565
 msgid "Body Background"
 msgstr ""
 
-#: inc/customizer-fields.php:558
+#: inc/customizer-fields.php:576
 msgid "Body Text"
 msgstr ""
 
-#: inc/customizer-fields.php:569
+#: inc/customizer-fields.php:587
 msgid "Menu Drop-downs Background"
 msgstr ""
 
-#: inc/customizer-fields.php:580
+#: inc/customizer-fields.php:598
 msgid "Menu Drop-downs Text"
 msgstr ""
 
-#: inc/customizer-fields.php:591
+#: inc/customizer-fields.php:609
 msgid "Footer Background"
 msgstr ""
 
-#: inc/customizer-fields.php:602
+#: inc/customizer-fields.php:620
 msgid "Footer Text"
 msgstr ""
 
-#: inc/customizer-fields.php:613
+#: inc/customizer-fields.php:631
 msgid "Footer Copyright Background"
 msgstr ""
 
-#: inc/customizer-fields.php:624
+#: inc/customizer-fields.php:642
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: inc/customizer-fields.php:635
+#: inc/customizer-fields.php:653
 msgid "Boxes Background"
 msgstr ""
 
-#: inc/customizer-fields.php:636
+#: inc/customizer-fields.php:654
 msgid "Sidebar widgets, post content in index view, ..."
 msgstr ""
 
-#: inc/customizer-fields.php:647
+#: inc/customizer-fields.php:665
 msgid "Site Border Color"
 msgstr ""
 

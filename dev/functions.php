@@ -323,3 +323,10 @@ require get_template_directory() . '/pluggable/lazyload/lazyload.php';
  * @link https://kinsta.com/knowledgebase/disable-emojis-wordpress/
  */
 require_once get_template_directory() . '/pluggable/disable-emoji.php';
+
+add_filter( 'et_project_posttype_rewrite_args', 'pehaarig_project_posttype_rewrite_args' );
+
+function pehaarig_project_posttype_rewrite_args( $rewrite ) {
+	$rewrite['slug'] = 'projet';
+	return $rewrite;
+}

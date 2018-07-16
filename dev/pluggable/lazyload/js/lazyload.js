@@ -25,7 +25,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 		});
 
 		lazyImages.forEach( function( lazyImage ) {
-		lazyImageObserver.observe( lazyImage );
+			lazyImageObserver.observe( lazyImage );
 		});
 	} else {
 
