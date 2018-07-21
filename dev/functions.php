@@ -338,9 +338,10 @@ function pehaarig_project_posttype_rewrite_args( $rewrite ) {
 /**
  * Disable dashicons for non logged-in users
  */
-function pehaaerig_dequeue_dashicon() {
+function pehaarig_dequeue_dashicons() {
+
 	if ( ! is_user_logged_in() ) {
         wp_deregister_style( 'dashicons' );
     }
 }
-add_action( 'wp_enqueue_scripts', 'pehaaerig_dequeue_dashicon' );
+add_action( 'wp_enqueue_scripts', 'pehaarig_dequeue_dashicons', 999999 );

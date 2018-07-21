@@ -23,6 +23,7 @@
 			array(
 				'theme_location' => 'secondary',
 				'menu_id'        => 'secondary-menu',
+				'menu_class'     => 'secondary-navigation-menu menu',
 				'container'      => 'ul',
 				'depth'          => 1,
 			)
