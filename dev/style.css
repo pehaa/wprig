@@ -436,10 +436,17 @@ template {
   margin: 0 auto;
   max-width: 100%;
 }
-body:not(.page-template-custom-page-template-full) .wrapper {
+.wrapper {
 	margin: 2rem auto;
 	width: calc(100% - 2rem);
 	max-width: var(--wrapper-max-width)rem;
+}
+
+.page-template-custom-page-template-full .wrapper,
+.project-template-default .wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 100%;
 }
 
 @media (--sidebar-query) {
