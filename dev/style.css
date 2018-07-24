@@ -29,7 +29,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
   # Main navigation menu
 # Content navigation
 # Footer
-# Infinite scroll
+
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -1317,20 +1317,7 @@ textarea {
 	margin: 0 1.5rem;
 }
 }
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-	/* Theme Footer (when set to scrolling) */
-	display: none;
-}
 
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
 .u-flex-spacebetween {
 	justify-content: space-between;
 }
