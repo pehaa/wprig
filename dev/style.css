@@ -1360,6 +1360,7 @@ textarea {
 
 .maintenant-deco-full:after {
 	height: 100%;
+	z-index: auto;
 }
 
 @media (min-width:981px) {
