@@ -1458,3 +1458,32 @@ textarea {
 .dropdown-toggle.pehaarig-keyboard-outline {
 	outline-offset: 2px;
 }
+
+
+.animated-logo .color {
+  stroke: currentColor;
+  stroke-width: 1.5;
+  animation: p1 2s 1;
+  fill-opacity: 1;
+}
+.animated-logo g  g :not(.color) {
+  /*animation: p2 1s 1;*/
+}
+@keyframes p1 {
+  0% {
+    fill-opacity: 0;
+  }
+  60% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0;
+  }
+}
+
+/*@keyframes p2 {
+  0% {
+    fill-opacity: 0;
+  }
+  1000% {
+    fill-opacity: 1;
+  } 
+}*/

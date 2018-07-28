@@ -71,6 +71,16 @@ $pehaarig_customizer_fields = array(
 					'mime_type'   => 'image',
 				),
 			),
+			'pehaarig_animate_logo' => array(
+				'setting_array' => array(
+					'default' => '',
+				),
+				'control_array' => array(
+					'label' => esc_html__( 'Animated Logo', 'wprig' ),
+					'description' => esc_html__( 'Enable animated logo', 'wprig' ),
+					'type' => 'checkbox',
+				),
+			),
 		),
 	),
 	'pehaarig_affiliation' => array(

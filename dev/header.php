@@ -34,7 +34,9 @@
 				<?php pehaarig_custom_logo_affiliate(); ?>
 				<?php pehaarig_donation_button(); ?>
 			</div>
-			<div class="custom-logo-link-ctnr"><?php pehaarig_custom_logo_main(); ?></div>
+			<div class="custom-logo-link-ctnr">
+				<?php pehaarig_custom_logo_main( true, true ); ?>
+			</div>
 			
 		</div><!-- .site-branding -->
 
