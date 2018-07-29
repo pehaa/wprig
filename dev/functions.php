@@ -221,7 +221,7 @@ function wprig_styles() {
 	wp_enqueue_style( 'wprig-fonts', wprig_fonts_url(), array(), null );
 
 	// Enqueue main stylesheet.
-	wp_enqueue_style( 'wprig-base-style', get_stylesheet_uri(), array(), '20180514' );
+	wp_enqueue_style( 'wprig-base-style', get_stylesheet_uri(), array(), '20180729' );
 
 	// Register component styles that are printed as needed.
 	wp_register_style( 'wprig-comments', get_theme_file_uri( '/css/comments.css' ), array(), '20180514' );
@@ -283,8 +283,8 @@ add_action( 'wp_enqueue_scripts', 'wprig_scripts' );
  */
 function wprig_scripts_late() {
 	// Enqueue the masterhead script.
-	wp_enqueue_script( 'wprig-masterhead', get_theme_file_uri( '/js/masterhead.js' ), array(), '20180514', true );
-		wp_script_add_data( 'wprig-masterhead', 'async', true );
+	wp_enqueue_script( 'wprig-masterhead', get_theme_file_uri( '/js/masterhead.js' ), array(), '20180729', true );
+	wp_script_add_data( 'wprig-masterhead', 'async', true );
 }
 add_action( 'wp_enqueue_scripts', 'wprig_scripts_late', 999 );
 /**

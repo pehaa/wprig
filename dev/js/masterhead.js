@@ -91,23 +91,31 @@ var aArray = jQuery.map( jQuery( "#primary-menu li.home-internal-link").children
 	}
 });
 
-function scrollHandler() {
-	var windowPos = jQuery( window ).scrollTop();
+function scrollHandler( windowPos ) {
+
 	var windowHeight = jQuery( window ).height();
 	var docHeight = jQuery( document ).height();
-
+	
 	if ( docHeight - windowPos - windowHeight < 24 ) {
-		jQuery( "#primary-menu li.home-internal-link a[href*='" + aArray[aArray.length - 1] + "']" ).parent().addClass( "current-menu-item-inter" );
+		var lastSectionLi = jQuery( "#primary-menu li.home-internal-link a[href*='" + aArray[aArray.length - 1] + "']" ).parent();
+		if ( !lastSectionLi.hasClass( "current-menu-item-inter" ) ) {
+			jQuery( ".current-menu-item-inter" ).removeClass( "current-menu-item-inter" );
+			lastSectionLi.addClass( "current-menu-item-inter" );
+		}		
 	} else {
 		for ( var i = 0; i < aArray.length; i++ ) {
 			var theID = aArray[i];
 			var secPosition = jQuery( theID ).offset().top;
-
+			var currentLi = jQuery( "a[href*='" + theID + "']" ).parent();
 			secPosition = secPosition - jQuery( "#site-navigation" ).offset().top  + windowPos - 70;
 			var divHeight = jQuery( theID ).height();
-			jQuery( ".current-menu-item-inter" ).removeClass( "current-menu-item-inter" );
+			console.log( i );
+			console.log( windowPos >= secPosition && windowPos < ( secPosition + divHeight ) );
 			if ( windowPos >= secPosition && windowPos < ( secPosition + divHeight ) ) {
-				jQuery( "a[href*='" + theID + "']" ).parent().addClass( "current-menu-item-inter" );
+				if ( ! currentLi.hasClass( "current-menu-item-inter" ) ) {
+					jQuery( ".current-menu-item-inter" ).removeClass( "current-menu-item-inter" );
+					currentLi.addClass( "current-menu-item-inter" );
+				}				
 				break;
 			}
 		}	
@@ -115,9 +123,28 @@ function scrollHandler() {
 }
 
 if ( jQuery( "body" ).hasClass( "home" ) ) {
-	scrollHandler();
-	jQuery( window ).scroll( scrollHandler );
+	scrollHandler( 0 );
+	var last_known_scroll_position = 0;
+	var ticking = false;
+
+	window.addEventListener( 'scroll', function() {
+
+		last_known_scroll_position = window.scrollY;
+
+		if ( !ticking ) {
+
+			window.requestAnimationFrame(	function() {
+				scrollHandler( last_known_scroll_position );
+				ticking = false;
+			});
+
+			ticking = true;
+
+		}
+	  
+	});
 }
+
 
 	
 
