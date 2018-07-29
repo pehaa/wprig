@@ -21,6 +21,8 @@ function initMainNavigation() {
 		return;
 	}
 
+	console.log( SITENAV );
+
 	// Get the submenus.
 	const SUBMENUS = SITENAV.querySelectorAll( '.menu ul' );
 

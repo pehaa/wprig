@@ -32,17 +32,17 @@ initBackToTop();
 let intervalId = 0; // Needed to cancel the scrolling when we're at the top of the page
 
 function scrollStep() {
-    // Check if we're at the top already. If so, stop scrolling by clearing the interval
-    if ( window.pageYOffset === 0 ) {
-        clearInterval( intervalId );
-    }
-    window.scroll( 0, window.pageYOffset - 50 );
+	// Check if we're at the top already. If so, stop scrolling by clearing the interval
+	if ( window.pageYOffset === 0 ) {
+		clearInterval( intervalId );
+	}
+	window.scroll( 0, window.pageYOffset - 50 );
 }
 
 function scrollToTop( e ) {
 	e.preventDefault();
-    // Call the function scrollStep() every 16.66 millisecons
-    intervalId = setInterval( scrollStep, 16.66 );
+	// Call the function scrollStep() every 16.66 millisecons
+	intervalId = setInterval( scrollStep, 16.66 );
 }
 
 // When the DOM is loaded, this click handler is added to our scroll button

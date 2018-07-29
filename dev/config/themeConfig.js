@@ -9,7 +9,7 @@ module.exports = {
 	dev: {
 		browserSync: {
 			live: true,
-			proxyURL: 'pehaarig.test',
+			proxyURL: 'withdup.test',
 			bypassPort: '8181'
 		},
 		browserslist: [ // See https://github.com/browserslist/browserslist

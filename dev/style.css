@@ -4,7 +4,7 @@ Theme URI: https://github.com/pehaa/pehaarig/
 Author: PeHaa THEMES for PEPS Paris
 Author URI: http://wptemplates.pehaa.com/
 Description: WordPress Theme for Foundation Maintenant
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v3 or later
 License URI: LICENSE
 Text Domain: wprig
@@ -969,22 +969,33 @@ textarea {
 	padding: 1.25rem 0.5rem;
 	transition: 0.25s;
 }
+.main-navigation-menu > .current-menu-item.home-internal-link:not(.current-menu-item-inter) > a {
+	color: inherit;
+}
+.main-navigation-menu > .current-menu-item.home-internal-link:not(.current-menu-item-inter) > a:after {
+	opacity:0;
+	transform: scaleX(0);
+}
 .main-navigation-menu > .current-menu-item:nth-child(4n + 1) > a,
+.main-navigation-menu > .current-menu-item-inter:nth-child(4n + 1) > a,
 .main-navigation-menu > li:nth-child(4n + 1) > a:hover,
 .main-navigation-menu > li:nth-child(4n + 1) > a:after {
 	color: var(--global-blue);
 }
 .main-navigation-menu > .current-menu-item:nth-child(4n + 2) > a,
+.main-navigation-menu > .current-menu-item-inter:nth-child(4n + 2) > a,
 .main-navigation-menu > li:nth-child(4n + 2) > a:hover,
 .main-navigation-menu > li:nth-child(4n + 2) > a:after {
 	color: var(--global-yellow);
 }
 .main-navigation-menu > .current-menu-item:nth-child(4n + 3) > a,
+.main-navigation-menu > .current-menu-item-inter:nth-child(4n + 3) > a,
 .main-navigation-menu > li:nth-child(4n + 3) > a:hover,
 .main-navigation-menu > li:nth-child(4n + 3) > a:after {
 	color: var(--global-green);
 }
 .main-navigation-menu > .current-menu-item:nth-child(4n) > a,
+.main-navigation-menu > .current-menu-item-inter:nth-child(4n) > a,
 .main-navigation-menu > li:nth-child(4n) > a:hover,
 .main-navigation-menu > li:nth-child(4n) > a:after {
 	color: var(--global-red);

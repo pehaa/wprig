@@ -241,7 +241,7 @@ function wprig_scripts() {
 	if ( ! wprig_is_amp() ) {
 
 		// Enqueue the navigation script.
-		wp_enqueue_script( 'wprig-navigation', get_theme_file_uri( '/js/navigation.js' ), array(), '20180514', false );
+		wp_enqueue_script( 'wprig-navigation', get_theme_file_uri( '/js/navigation.js' ), array(), '20180514', true );
 		wp_script_add_data( 'wprig-navigation', 'async', true );
 		wp_localize_script( 'wprig-navigation', 'wprigScreenReaderText', array(
 			'expand'   => __( 'Expand child menu', 'wprig' ),
@@ -252,9 +252,7 @@ function wprig_scripts() {
 		wp_enqueue_script( 'wprig-webfont', get_theme_file_uri( 'pluggable/webfonts/MyFontsWebfontsKit.js' ), array(), '20180514', true );
 		wp_script_add_data( 'wprig-webfont', 'async', false );
 
-		// Enqueue the masterhead script.
-		wp_enqueue_script( 'wprig-masterhead', get_theme_file_uri( '/js/masterhead.js' ), array(), '20180514', true );
-		wp_script_add_data( 'wprig-masterhead', 'async', false );
+		
 
 		// Enqueue the masterhead script.
 		if ( apply_filters( 'pehaarig_enable_back_to_top', true ) ) {
@@ -280,6 +278,15 @@ function wprig_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'wprig_scripts' );
 
+/**
+ * Enqueue late scripts.
+ */
+function wprig_scripts_late() {
+	// Enqueue the masterhead script.
+	wp_enqueue_script( 'wprig-masterhead', get_theme_file_uri( '/js/masterhead.js' ), array(), '20180514', true );
+		wp_script_add_data( 'wprig-masterhead', 'async', true );
+}
+add_action( 'wp_enqueue_scripts', 'wprig_scripts_late', 999 );
 /**
  * Enqueue scripts.
  */
