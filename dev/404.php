@@ -20,7 +20,7 @@ get_header(); ?>
 			<div class="page-content">
 				<p>Oups. Il semblerait que ce que vous cherchez a été déplacé ou n’existe simplement pas&hellip;</p>
 				<p>Désolés pour la gène occasionnée. :(</p>
-				<a href="">Retour à l'accueil</a>
+				<a class="btn" href="<?php echo esc_url( home_url( '/' ) );?>" rel="home"><span>Retour à l'accueil</span></a>
 			</div><!-- .page-content -->
 		</section><!-- .error-404 -->
 

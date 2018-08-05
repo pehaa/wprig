@@ -17,6 +17,12 @@ function wprig_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	if ( is_active_sidebar( 'sidebar-1' ) ) {
+		
+		$classes[] = 'maybe-sidebar';
+
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'wprig_body_classes' );

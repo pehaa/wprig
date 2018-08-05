@@ -86,7 +86,7 @@ function scrollHandler( windowPos ) {
 	if ( docHeight - windowPos - windowHeight < 24 ) {
 		var lastSectionLi = jQuery( '#primary-menu li.home-internal-link a[href*="' + aArray[aArray.length - 1] + '"]' ).parent();
 		if ( ! lastSectionLi.hasClass( 'current-menu-item-inter' ) ) {
-			jQuery( '.current-menu-item-inter" ).removeClass( "current-menu-item-inter' );
+			jQuery( '.current-menu-item-inter' ).removeClass( 'current-menu-item-inter' );
 			lastSectionLi.addClass( 'current-menu-item-inter' );
 		}
 	} else {
@@ -96,6 +96,9 @@ function scrollHandler( windowPos ) {
 			var currentLi = jQuery( 'a[href*="' + theID + '"]' ).parent();
 			secPosition = secPosition - jQuery( '#site-navigation' ).offset().top  + windowPos - 70;
 			var divHeight = jQuery( theID ).height();
+			console.log( "windowPos", secPosition );
+			console.log( "secPosition", secPosition );
+			console.log( "secPosition + divHeight", secPosition + divHeight );
 			if ( windowPos >= secPosition && windowPos < ( secPosition + divHeight ) ) {
 				if ( ! currentLi.hasClass( 'current-menu-item-inter' ) ) {
 					jQuery( '.current-menu-item-inter' ).removeClass( 'current-menu-item-inter' );
