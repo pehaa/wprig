@@ -796,6 +796,7 @@ textarea {
 	font-size: .875rem;
 	position: relative;
 	overflow: hidden;
+	-webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 .main-navigation .donation-button {
 	position: absolute;

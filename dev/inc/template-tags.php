@@ -492,12 +492,12 @@ if ( ! function_exists( 'pehaarig_donation_button' ) ) :
 			printf( '<a class="donation-button" href="%1$s" %2$s>
 						<span class="circle_pos">
     						<svg class="circle" version="1.1" viewBox="0 0 100 100">
-      							<circle fill="rgb(37, 151, 212,.8)" cx="50" cy="50" r="50" />
+      							<circle fill="rgba(37, 151, 212,.8)" cx="50" cy="50" r="50" />
 						      <circle fill="rgb(37, 151, 212)" cx="50" cy="50" r="46" />
-						      <circle fill="rgb(0, 120, 115, .4)" cx="50" cy="50" r="38" />
-						      <circle fill="rgb(0, 120, 115, .6)" cx="50" cy="50" r="30" />
+						      <circle fill="rgba(0, 120, 115, .4)" cx="50" cy="50" r="38" />
+						      <circle fill="rgba(0, 120, 115, .6)" cx="50" cy="50" r="30" />
 						      <circle fill="rgb(0, 120, 115)" cx="50" cy="50" r="22" />
-						      <circle fill="rgb(236, 100, 78,.75)" cx="50" cy="50" r="15" />
+						      <circle fill="rgba(236, 100, 78,.75)" cx="50" cy="50" r="15" />
 						      <circle fill="rgb(236, 100, 78)" cx="50" cy="50" r="10" />
 						      <circle fill="#ebac45" cx="50" cy="50" r="5" />
 						    </svg>

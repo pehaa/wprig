@@ -221,7 +221,7 @@ function wprig_styles() {
 	wp_enqueue_style( 'wprig-fonts', wprig_fonts_url(), array(), null );
 
 	// Enqueue main stylesheet.
-	wp_enqueue_style( 'wprig-base-style', get_stylesheet_uri(), array(), '20180729' );
+	wp_enqueue_style( 'wprig-base-style', get_stylesheet_uri(), array(), '20180805' );
 
 	// Register component styles that are printed as needed.
 	wp_register_style( 'wprig-comments', get_theme_file_uri( '/css/comments.css' ), array(), '20180514' );

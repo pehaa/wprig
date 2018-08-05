@@ -15,6 +15,23 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: 404.1.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.1.php:20
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: 404.1.php:29
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smiley
+#: 404.1.php:48
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
 #. translators: 1: title.
 #: comments.php:36
 msgid "One thought on &ldquo;%1$s&rdquo;"
@@ -60,11 +77,11 @@ msgstr ""
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:250
+#: functions.php:252
 msgid "Expand child menu"
 msgstr ""
 
-#: functions.php:251
+#: functions.php:253
 msgid "Collapse child menu"
 msgstr ""
 
