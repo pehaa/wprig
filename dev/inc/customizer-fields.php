@@ -117,6 +117,15 @@ $pehaarig_customizer_fields = array(
 					'description' => esc_html__( 'Paste the url of your donation organisation.', 'wprig' ),
 				),
 			),
+			'pehaarig_link_donate_new_tab' => array(
+				'setting_array' => array(
+					'default' => '1',
+				),
+				'control_array' => array(
+					'label' => esc_html__( 'Open in new tab', 'wprig' ),
+					'type' => 'checkbox',
+				),
+			),
 		),
 	),
 	'pehaarig_social' => array(
