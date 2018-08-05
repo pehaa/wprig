@@ -41,11 +41,13 @@ initMasterhead();
 function activateInternalLinks() {
 
 	var scrollTop;
-
-	jQuery( '.main-navigation-menu a[href*=#]' ).on( 'touchstart click', function( e ) {
+	const MENUTOGGLE = jQuery( '.menu-toggle' );
+	const SITENAV = jQuery( '#site-navigation' );
+	jQuery( '.home .main-navigation-menu a[href*=#]' ).on( 'touchstart click', function( e ) {
 
 		var target = this.hash;
 		var $target = jQuery( target );
+		var verticalGap = 64;
 
 		if ( location.pathname.replace( /^\//, '' ) !== this.pathname.replace( /^\//, '' ) || location.hostname !== this.hostname ) {
 			return;
@@ -53,17 +55,22 @@ function activateInternalLinks() {
 
 		e.preventDefault();
 
-		scrollTop = Math.round( jQuery( target ).offset().top - 64 );
+		if ( SITENAV.hasClass( 'toggled-on') ) {
+			MENUTOGGLE.trigger( 'click' );
+			verticalGap = 0;
+		}
+
+		scrollTop = Math.round( jQuery( target ).offset().top - verticalGap );
 		jQuery( 'html, body' )
 			.stop()
 			.animate({
 				'scrollTop': scrollTop
 				}, 800, 'swing', function(){
-					if ( Math.round( jQuery( target ).offset().top - 64 ) !== scrollTop ) {
+					if ( Math.round( jQuery( target ).offset().top - verticalGap ) !== scrollTop ) {
 						jQuery( 'html, body' )
 						.stop()
 						.animate({
-							'scrollTop': jQuery( target ).offset().top - 64
+							'scrollTop': jQuery( target ).offset().top - verticalGap
 						}, 300 );
 					}
 				});
@@ -96,9 +103,6 @@ function scrollHandler( windowPos ) {
 			var currentLi = jQuery( 'a[href*="' + theID + '"]' ).parent();
 			secPosition = secPosition - jQuery( '#site-navigation' ).offset().top  + windowPos - 70;
 			var divHeight = jQuery( theID ).height();
-			console.log( "windowPos", secPosition );
-			console.log( "secPosition", secPosition );
-			console.log( "secPosition + divHeight", secPosition + divHeight );
 			if ( windowPos >= secPosition && windowPos < ( secPosition + divHeight ) ) {
 				if ( ! currentLi.hasClass( 'current-menu-item-inter' ) ) {
 					jQuery( '.current-menu-item-inter' ).removeClass( 'current-menu-item-inter' );

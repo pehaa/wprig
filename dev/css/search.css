@@ -1,0 +1,16 @@
+body.search  {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+}
+.search .site {
+	margin: 0;
+}
+.search-results a {
+	text-decoration: none;
+	color: inherit;
+}
+.search-results article {
+	padding-bottom: 3rem;
+}
