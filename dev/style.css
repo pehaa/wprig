@@ -1531,7 +1531,7 @@ textarea {
 }
 
 
-.animated-logo .color {
+[id="animated-logo"] .color {
   stroke: currentColor;
   stroke-width: 1.5;
   animation: p1 2s 1;
