@@ -95,7 +95,10 @@ function wprig_add_body_style() {
 		$preloads = array();
 
 		// Preload content.css.
-		$preloads['wprig-content'] = wprig_get_preload_stylesheet_uri( $wp_styles, 'wprig-content' );
+		if ( is_archive() || is_singular( 'post') ) {
+			$preloads['wprig-content'] = wprig_get_preload_stylesheet_uri( $wp_styles, 'wprig-content' );
+		}
+		
 
 		// Preload sidebar.css and widget.css.
 		if ( is_active_sidebar( 'sidebar-1' ) ) {
@@ -106,12 +109,6 @@ function wprig_add_body_style() {
 		// Preload comments.css.
 		if ( ! post_password_required() && is_singular( 'post' ) && ( comments_open() || get_comments_number() ) ) {
 			$preloads['wprig-comments'] = wprig_get_preload_stylesheet_uri( $wp_styles, 'wprig-comments' );
-		}
-
-		// Preload front-page.css.
-		global $template;
-		if ( 'front-page.php' === basename( $template ) ) {
-			$preloads['wprig-front-page'] = wprig_get_preload_stylesheet_uri( $wp_styles, 'wprig-front-page' );
 		}
 
 		// Output the preload markup in <head>.

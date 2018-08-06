@@ -319,7 +319,7 @@ if ( ! function_exists( 'pehaarig_custom_logo' ) ) :
 			if ( empty( $image_alt ) ) {
 				$custom_logo_attr['alt'] = get_bloginfo( 'name', 'display' );
 			}
-			$html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
+			$html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home">%2$s</a>',
 				esc_url( home_url( '/' ) ),
 				wp_get_attachment_image( $id, 'full', false, $custom_logo_attr )
 			);
