@@ -269,7 +269,7 @@ function wprig_scripts() {
 		wp_script_add_data( 'wprig-skip-link-focus-fix', 'defer', true );
 
 		// Enqueue comment script on singular post/page views only.
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		if ( is_singular( 'post' ) && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 	}
@@ -294,11 +294,6 @@ function cc_mime_types( $mimes ){
 	return $mimes;
 }
 add_filter( 'upload_mimes', 'cc_mime_types' );
-
-/**
- * Custom responsive image sizes.
- */
-require get_template_directory() . '/inc/image-sizes.php';
 
 /**
  * Custom template tags for this theme.
@@ -388,7 +383,7 @@ function et_pb_register_posttypes() {
 		'capability_type'    => 'post',
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'author', 'editor', 'thumbnail', 'excerpt', 'revisions', 'custom-fields' ),
+		'supports'           => array( 'title', 'author', 'editor', 'thumbnail', 'excerpt', 'revisions' ),
 	);
 
 	register_post_type( 'project', apply_filters( 'et_project_posttype_args', $args ) );
@@ -438,6 +433,9 @@ if ( ! function_exists( 'pehaarig_disable_categories_archives' ) ) :
  * Modify the page builder project settings
  */
 function pehaarig_disable_categories_archives() {
+	if ( ! get_theme_mod( 'pehaarig_archives_redirection', '1' ) ) {
+		return;
+	}
 	global $wp_query;
 	if ( $wp_query->is_archive ) {
 		header( 'X-Redirect-By: PeHaaRig Theme' );

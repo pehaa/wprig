@@ -104,7 +104,7 @@ function wprig_add_body_style() {
 		}
 
 		// Preload comments.css.
-		if ( ! post_password_required() && is_singular() && ( comments_open() || get_comments_number() ) ) {
+		if ( ! post_password_required() && is_singular( 'post' ) && ( comments_open() || get_comments_number() ) ) {
 			$preloads['wprig-comments'] = wprig_get_preload_stylesheet_uri( $wp_styles, 'wprig-comments' );
 		}
 

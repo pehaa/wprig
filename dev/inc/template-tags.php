@@ -461,19 +461,6 @@ if ( ! function_exists( 'pehaarig_custom_logo_affiliate' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'pehaarig_site_title' ) ) :
-	function pehaarig_site_title() {
-		if ( ! get_theme_mod( 'pehaarig_hide_title' ) ) {
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
-		}
-	}
-endif;
-
 if ( ! function_exists( 'pehaarig_site_description' ) ) :
 	function pehaarig_site_description() {
 		$wprig_description = get_bloginfo( 'description', 'display' );
@@ -491,22 +478,21 @@ if ( ! function_exists( 'pehaarig_donation_button' ) ) :
 		if ( $url ) {
 			printf( '<a class="donation-button" href="%1$s" %2$s>
 						<span class="circle_pos">
-    						<svg class="circle" version="1.1" viewBox="0 0 100 100">
-      							<circle fill="rgba(37, 151, 212,.8)" cx="50" cy="50" r="50" />
-						      <circle fill="rgb(37, 151, 212)" cx="50" cy="50" r="46" />
-						      <circle fill="rgba(0, 120, 115, .4)" cx="50" cy="50" r="38" />
-						      <circle fill="rgba(0, 120, 115, .6)" cx="50" cy="50" r="30" />
-						      <circle fill="rgb(0, 120, 115)" cx="50" cy="50" r="22" />
-						      <circle fill="rgba(236, 100, 78,.75)" cx="50" cy="50" r="15" />
-						      <circle fill="rgb(236, 100, 78)" cx="50" cy="50" r="10" />
-						      <circle fill="#ebac45" cx="50" cy="50" r="5" />
-						    </svg>
-  						</span>
-  						<span class="donation-button-span">%3$s</span>
+							<svg class="circle" version="1.1" viewBox="0 0 100 100">
+								<circle fill="rgba(37, 151, 212,.8)" cx="50" cy="50" r="50" />
+								<circle fill="rgb(37, 151, 212)" cx="50" cy="50" r="46" />
+								<circle fill="rgba(0, 120, 115, .4)" cx="50" cy="50" r="38" />
+								<circle fill="rgba(0, 120, 115, .6)" cx="50" cy="50" r="30" />
+								<circle fill="rgb(0, 120, 115)" cx="50" cy="50" r="22" />
+								<circle fill="rgba(236, 100, 78,.75)" cx="50" cy="50" r="15" />
+								<circle fill="rgb(236, 100, 78)" cx="50" cy="50" r="10" />
+								<circle fill="#ebac45" cx="50" cy="50" r="5" />
+							</svg>
+						</span>
+  						<span class="donation-button-span">Faire un don</span>
   					</a>', 
   					esc_url( $url ),
-  					get_theme_mod( 'pehaarig_link_donate_new_tab', 1 ) ? 'target="_blank"': '',
-  					esc_html( 'Faire un don', 'wprig' )
+  					get_theme_mod( 'pehaarig_link_donate_new_tab', 1 ) ? 'target="_blank"': '' 					
   				);
 		}
 	}
