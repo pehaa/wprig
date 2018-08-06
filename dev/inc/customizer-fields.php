@@ -146,6 +146,34 @@ $pehaarig_customizer_fields = array(
 			),
 		),
 	),
+	'pehaarig_blog' => array(
+		'section' => array(
+			'title' => esc_html__( 'Blog functionality (optional)', 'wprig' ),
+			'panel' => 'pehaarig',
+		),	
+		'settings' => array(
+			'pehaarig_archives_redirection' => array(
+				'setting_array' => array(
+					'default' => '1',
+				),
+				'control_array' => array(
+					'label' => esc_html__( 'Redirect all archives to homepage', 'wprig' ),
+					'description' => esc_html__( 'This setting should probably be deactivated when the blog functionality is uses. You can still disable some type of archives via Yoast SEO settings.', 'wprig' ),
+					'type' => 'checkbox',
+				),
+			),
+			'pehaarig_sidebar' => array(
+				'setting_array' => array(
+					'default' => '',
+				),
+				'control_array' => array(
+					'label' => esc_html__( 'Enable sidebar', 'wprig' ),
+					'description' => esc_html__( 'Right widgets area will be addes to single posts and archives pages.', 'wprig' ),
+					'type' => 'checkbox',
+				),
+			),
+		),
+	),
 	'yaga_footer_and_scripts' => array(
 		'section' => array(
 			'title' => esc_html__( 'Custom Scripts and Footer', 'wprig' ),

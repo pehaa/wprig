@@ -192,6 +192,9 @@ add_action( 'enqueue_block_editor_assets', 'wprig_gutenberg_styles' );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function wprig_widgets_init() {
+	if ( !get_theme_mod( 'pehaarig_sidebar', 0 ) ) {
+		return;
+	}
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'wprig' ),
 		'id'            => 'sidebar-1',
@@ -201,15 +204,6 @@ function wprig_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-	/* register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'wprig' ),
-		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Add widgets here.', 'wprig' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) ); */
 }
 add_action( 'widgets_init', 'wprig_widgets_init' );
 
@@ -358,6 +352,9 @@ function pehaarig_dequeue_dashicons() {
 }
 add_action( 'wp_enqueue_scripts', 'pehaarig_dequeue_dashicons', 999999 );
 
+/**
+ * Modify the page builder project settings
+ */
 function et_pb_register_posttypes() {
 	$labels = array(
 		'name'               => esc_html__( 'Projects', 'et_builder' ),
@@ -419,7 +416,7 @@ function et_pb_register_posttypes() {
 		'show_admin_column' => true,
 		'query_var'         => true,
 	) );
-
+	// project_tag is not registered causes divi builder warning
 	register_taxonomy( 'project_tag', array( 'project' ), array(
 		'public' => false,
 	) );
@@ -435,3 +432,18 @@ function pehaarig_query_vars( $qvars ) {
   return $qvars;
 }
 add_filter( 'request', 'pehaarig_query_vars' );
+
+if ( ! function_exists( 'pehaarig_disable_categories_archives' ) ) :
+/**
+ * Modify the page builder project settings
+ */
+function pehaarig_disable_categories_archives() {
+	global $wp_query;
+	if ( $wp_query->is_archive ) {
+		header( 'X-Redirect-By: PeHaaRig Theme' );
+		wp_safe_redirect( get_bloginfo( 'url' ), 301 );
+		exit;
+	}	
+}
+endif;
+add_action( 'wp', 'pehaarig_disable_categories_archives' );
