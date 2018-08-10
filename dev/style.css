@@ -774,10 +774,7 @@ textarea {
 	max-width: 15%;
 }
 .custom-logo-link-ctnr {
-	width: 100%;
 	text-align: center;
-	margin: auto;
-	max-width: 60%;
 	position: relative;
 }
 
@@ -822,7 +819,7 @@ textarea {
 	position: relative;
 	z-index: 4;
 }
-.anim_ripple {
+.anim_ripple svg {
   animation: 1.5s ripple linear infinite;
 }
 

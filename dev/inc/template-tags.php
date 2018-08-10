@@ -409,6 +409,7 @@ if ( ! function_exists( 'pehaarig_custom_logo_affiliate' ) ) :
 			$custom_logo_attr = array(
 				'class'    => 'custom-logo affiliate-logo skip-lazy',
 				'height' => 64,
+				'width' => 64,
 			);
 
 			$image_alt = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );			

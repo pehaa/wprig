@@ -159,13 +159,13 @@ function donationButton( el ) {
 
 			// don't remove if mouse re-entered
 			if ( ! hover ) {
-				DONATIONSVG.classList.remove( 'anim_ripple' );
+				DONATIONCTNR.classList.remove( 'anim_ripple' );
 			}
 		}, 600 );
 	};
 	el.onmouseenter = function( event ) {
 		hover = true;
-		DONATIONSVG.classList.add( 'anim_ripple' );
+		DONATIONCTNR.classList.add( 'anim_ripple' );
 	};
 	el.onmousemove = function( event ) {
 	    DONATIONCTNR.setAttribute( 'style',
