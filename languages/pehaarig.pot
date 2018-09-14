@@ -15,23 +15,6 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: 404.1.php:16
-msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
-
-#: 404.1.php:20
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
-msgstr ""
-
-#: 404.1.php:29
-msgid "Most Used Categories"
-msgstr ""
-
-#. translators: %1$s: smiley
-#: 404.1.php:48
-msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
-
 #. translators: 1: title.
 #: comments.php:36
 msgid "One thought on &ldquo;%1$s&rdquo;"
@@ -69,19 +52,19 @@ msgstr ""
 msgid "Secondary"
 msgstr ""
 
-#: functions.php:196
+#: functions.php:199
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:198
+#: functions.php:201
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:252
+#: functions.php:246
 msgid "Expand child menu"
 msgstr ""
 
-#: functions.php:253
+#: functions.php:247
 msgid "Collapse child menu"
 msgstr ""
 
@@ -98,143 +81,103 @@ msgid "Open menu"
 msgstr ""
 
 #: inc/customizer-fields.php:11
-msgid "Logo, Title and Tagline"
+msgid "Logo Settings"
 msgstr ""
 
-#: inc/customizer-fields.php:18
-msgid "Hide Site Title"
-msgstr ""
-
-#: inc/customizer-fields.php:20
-msgid "If checked the site title will not be displayed in the site header area."
-msgstr ""
-
-#: inc/customizer-fields.php:26
-msgid "Hide Site Tagline"
-msgstr ""
-
-#: inc/customizer-fields.php:28
-msgid "If checked the site tagline will not be displayed in the site header area."
-msgstr ""
-
-#: inc/customizer-fields.php:37
+#: inc/customizer-fields.php:21
 msgid "Logo"
 msgstr ""
 
-#: inc/customizer-fields.php:38
+#: inc/customizer-fields.php:22
 msgid "Upload your logo."
 msgstr ""
 
-#: inc/customizer-fields.php:49
-msgid "Logo display height"
-msgstr ""
-
-#: inc/customizer-fields.php:58
+#: inc/customizer-fields.php:32
 msgid "Logo - version footer"
 msgstr ""
 
-#: inc/customizer-fields.php:59
+#: inc/customizer-fields.php:33
 msgid "Upload your footer logo."
 msgstr ""
 
-#: inc/customizer-fields.php:68
+#: inc/customizer-fields.php:42
 msgid "Animated Logo"
 msgstr ""
 
-#: inc/customizer-fields.php:69
-msgid "Enable animated logo"
+#: inc/customizer-fields.php:43
+msgid "Enable custom logo animation"
 msgstr ""
 
-#: inc/customizer-fields.php:77
+#: inc/customizer-fields.php:51
 msgid "Affiliation"
 msgstr ""
 
-#: inc/customizer-fields.php:87
+#: inc/customizer-fields.php:61
 msgid "Affiliate Logo"
 msgstr ""
 
-#: inc/customizer-fields.php:88
+#: inc/customizer-fields.php:62
 msgid "Upload your affiliate logo."
 msgstr ""
 
-#: inc/customizer-fields.php:98
+#: inc/customizer-fields.php:72
 msgid "Affiliate Link"
 msgstr ""
 
-#: inc/customizer-fields.php:99
+#: inc/customizer-fields.php:73
 msgid "Paste the url of your affiliate organisation."
 msgstr ""
 
-#: inc/customizer-fields.php:106
+#: inc/customizer-fields.php:80
 msgid "Donation"
 msgstr ""
 
-#: inc/customizer-fields.php:116
+#: inc/customizer-fields.php:90
 msgid "Donation Link"
 msgstr ""
 
-#: inc/customizer-fields.php:117
+#: inc/customizer-fields.php:91
 msgid "Paste the url of your donation organisation."
 msgstr ""
 
-#: inc/customizer-fields.php:125
+#: inc/customizer-fields.php:99
 msgid "Open in new tab"
 msgstr ""
 
-#: inc/customizer-fields.php:133
+#: inc/customizer-fields.php:107
 msgid "Follow us footer buttons"
 msgstr ""
 
-#: inc/customizer-fields.php:143
+#: inc/customizer-fields.php:117
 msgid "Linkedin URL"
 msgstr ""
 
-#: inc/customizer-fields.php:144
+#: inc/customizer-fields.php:118
 msgid "Paste the url of your linkedin profile."
 msgstr ""
 
-#: inc/customizer-fields.php:151
-msgid "Custom Scripts and Footer"
+#: inc/customizer-fields.php:125
+msgid "Blog functionality (optional)"
 msgstr ""
 
-#: inc/customizer-fields.php:161
-msgid "Header Tracking Code"
+#: inc/customizer-fields.php:134
+msgid "Redirect all archives to homepage"
 msgstr ""
 
-#: inc/customizer-fields.php:162
-msgid "Paste your header-destined tracking code here (e.g. Google Analytics)."
+#: inc/customizer-fields.php:135
+msgid "This setting should probably be deactivated when the blog functionality is uses. You can still disable some type of archives via Yoast SEO settings."
 msgstr ""
 
-#: inc/customizer-fields.php:172
-msgid "Footer Tracking Code"
+#: inc/customizer-fields.php:144
+msgid "Enable sidebar"
 msgstr ""
 
-#: inc/customizer-fields.php:173
-msgid "Paste your footer-destined tracking code here."
+#: inc/customizer-fields.php:145
+msgid "Right widgets area will be addes to single posts and archives pages."
 msgstr ""
 
-#: inc/customizer-fields.php:180
-msgid "Custom copyright text (left)"
-msgstr ""
-
-#: inc/customizer-fields.php:181
-msgid "You can modify the text displayed in the left footer copyright area."
-msgstr ""
-
-#: inc/customizer-fields.php:188
-msgid "Custom copyright text (right)"
-msgstr ""
-
-#: inc/customizer-fields.php:189
-msgid "You can modify the text displayed in the right footer copyright area."
-msgstr ""
-
-#: inc/customizer-fields.php:198
-msgid "Fixed footer"
-msgstr ""
-
-#: inc/customizer-fields.php:199
-msgid "Enable fixed (parallax) footer behavior applied on wide screens over 1280px."
+#: inc/customizer.php:49
+msgid "Theme Settings"
 msgstr ""
 
 #. translators: %s: search query.

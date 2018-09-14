@@ -251,7 +251,7 @@ function wprig_scripts() {
 		wp_enqueue_script( 'wprig-webfont', get_theme_file_uri( 'pluggable/webfonts/MyFontsWebfontsKit.js' ), array(), '20180805', true );
 		wp_script_add_data( 'wprig-webfont', 'async', false );
 
-		
+
 
 		// Enqueue the masterhead script.
 		if ( apply_filters( 'pehaarig_enable_back_to_top', true ) ) {
@@ -272,6 +272,8 @@ function wprig_scripts() {
 		if ( is_singular( 'post' ) && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+
+
 	}
 
 }
@@ -284,6 +286,16 @@ function wprig_scripts_late() {
 	// Enqueue the masterhead script.
 	wp_enqueue_script( 'wprig-masterhead', get_theme_file_uri( '/js/masterhead.js' ), array(), '20180729', true );
 	wp_script_add_data( 'wprig-masterhead', 'async', true );
+	if ( is_front_page() ) {
+
+			wp_enqueue_script( 'pehaarig-contact', get_theme_file_uri( '/js/contact.js' ), array( 'wprig-masterhead' ), '20180514', true );
+			$object = 'none';
+
+			if ( isset( $_GET['objet'] ) && in_array( $_GET['objet'], array( 'partenariat', 'benevolat', 'projet', 'financement' ) ) ) {
+				$object = $_GET['objet'];
+			}
+			wp_localize_script( 'pehaarig-contact', 'pehaarigContactQuery', $object );
+		}
 }
 add_action( 'wp_enqueue_scripts', 'wprig_scripts_late', 999 );
 /**
@@ -423,7 +435,7 @@ function pehaarig_query_vars( $qvars ) {
 	}
 	if ( isset( $qvars['post_type'] ) && !isset( $qvars['name'] ) ) {
 		unset( $qvars['post_type'] );
-	}  
+	}
   return $qvars;
 }
 add_filter( 'request', 'pehaarig_query_vars' );
@@ -441,7 +453,7 @@ function pehaarig_disable_categories_archives() {
 		header( 'X-Redirect-By: PeHaaRig Theme' );
 		wp_safe_redirect( get_bloginfo( 'url' ), 301 );
 		exit;
-	}	
+	}
 }
 endif;
 add_action( 'wp', 'pehaarig_disable_categories_archives' );
