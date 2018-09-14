@@ -903,6 +903,10 @@ textarea {
 	.masthead-pre-fixed .main-navigation .custom-logo-link {
 		left: 1rem;
 	}
+	.custom-logo-link-ctnr {
+		max-width: 60%;
+		margin: auto;
+	}
 	
 }
 
@@ -1106,6 +1110,10 @@ textarea {
 	.main-navigation.toggled-on .menu {
 		display: block;
 		padding: 0 1.5rem 3rem ;
+	}
+	.main-navigation .sub-menu {
+		padding: 0;
+		margin: 0;
 	}
 	.main-navigation ul ul li {
 		padding-left: 2rem;
@@ -1478,12 +1486,18 @@ textarea {
 	width: 100%!important;
 }
 
+.wpcf7-form textarea:focus,
+.wpcf7-form input:focus {
+	outline: 2px dotted!important;
+	outline-offset: -4px;
+}
+
 .et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form input[type=text],
 .et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form input[type=email],
 .et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form input[type=submit],
 .et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form textarea {
 	border: none;
-	background: #fff;
+	background: rgba(255,255,255,.9);
 	color: var(--global-font-color);
 	border-radius: 5px;
 	max-width: 100%;

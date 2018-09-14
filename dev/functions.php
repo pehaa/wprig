@@ -445,3 +445,18 @@ function pehaarig_disable_categories_archives() {
 }
 endif;
 add_action( 'wp', 'pehaarig_disable_categories_archives' );
+
+
+/**
+ * Remove front-end script from svg-support plugin
+ */
+remove_action( 'wp_enqueue_scripts', 'bodhi_svgs_frontend_css' );
+
+
+/**
+ * Remove double fonts loading from divi-builder
+ */
+
+add_action( 'wp_enqueue_scripts', function(){
+	remove_action( 'wp_enqueue_scripts', 'et_builder_preprint_font' );
+}, 1);

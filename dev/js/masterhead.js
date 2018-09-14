@@ -43,7 +43,8 @@ function activateInternalLinks() {
 	var scrollTop;
 	const MENUTOGGLE = jQuery( '.menu-toggle' );
 	const SITENAV = jQuery( '#site-navigation' );
-	jQuery( '.home .main-navigation-menu a[href*=#]' ).on( 'touchstart click', function( e ) {
+	
+	jQuery( '.main-navigation-menu a[href*=#]' ).on( 'touchstart click', function( e ) {
 
 		var target = this.hash;
 		var $target = jQuery( target );
