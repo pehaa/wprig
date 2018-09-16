@@ -8,7 +8,7 @@ const niceObject = {
 	financement: 'Contact Financement'
 };
 
-if ( CONTACTFORMOBJECTFIELD && -1 === objects.indexOf( pehaarigContactQuery ) ) {
+if ( CONTACTFORMOBJECTFIELD && -1 !== objects.indexOf( pehaarigContactQuery ) ) {
 	const cleanUri = location.protocol + '//' + location.host + location.pathname;
 	window.history.replaceState( {}, document.title, cleanUri );
 	window.location.hash = 'contact';
