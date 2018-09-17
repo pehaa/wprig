@@ -6,7 +6,10 @@
  *
  * @package wprig
  */
-
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/pehaarig-share-button-class.php';
 /**
  * Determine whether this is an AMP response.
  *
@@ -462,3 +465,9 @@ if ( ! function_exists( 'pehaarig_donation_button' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'pehaarig_social_share') ) {
+	function pehaarig_social_share() {
+		$share = new PeHaaRig_Share_Button();
+		echo apply_filters( 'pehaarig_share_ouput', $share->display_share( false, false ) );
+	}
+}

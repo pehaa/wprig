@@ -32,7 +32,10 @@
 		<div class="site-branding">
 			<div class="donation-ctnr">
 				<?php pehaarig_custom_logo_affiliate(); ?>
-				<?php pehaarig_donation_button(); ?>
+				<div>
+					<?php pehaarig_donation_button(); ?>
+					<?php pehaarig_social_share(); ?>
+				</div>
 			</div>
 			<div class="custom-logo-link-ctnr">
 				<?php pehaarig_custom_logo_main( true, true ); ?>
@@ -80,6 +83,7 @@
 				?>
 			</div>
 			<?php pehaarig_donation_button(); ?>
+			<?php pehaarig_social_share(); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 	<div class="grid-container wrapper">
