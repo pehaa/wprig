@@ -4,7 +4,7 @@ Theme URI: https://github.com/pehaa/pehaarig/
 Author: PeHaa THEMES for PEPS Paris
 Author URI: http://wptemplates.pehaa.com/
 Description: WordPress Theme for Foundation Maintenant
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v3 or later
 License URI: LICENSE
 Text Domain: wprig
@@ -477,11 +477,11 @@ template {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-@media (--narrow-menu-query) {
+/*@media (--narrow-menu-query) {
 	html {
 		font-size: 87.5%;
 	}
-}
+}*/
 body,
 button,
 input,
@@ -645,11 +645,13 @@ a:hover, a:focus, a:active {
 	color: #00a0d2;
 }
 
-a:focus {
+a:focus,
+button:focus {
 	outline: thin dotted;
 }
 
-a:hover, a:active {
+a:hover, a:active,
+button: hover {
 	outline: 0;
 }
 
@@ -795,7 +797,7 @@ textarea {
 	overflow: hidden;
 	-webkit-mask-image: -webkit-radial-gradient(white, black);
 }
-.main-navigation .donation-button {
+.main-navigation .donation-and-share {
 	position: absolute;
 	right: 0.5rem;
 }
@@ -861,7 +863,7 @@ textarea {
 	word-wrap: break-word;
 }
 .main-navigation .custom-logo-link,
-.main-navigation .donation-button {
+.main-navigation .donation-and-share {
 	display: none;
 }
 @media (--sidebar-query) {
@@ -894,10 +896,12 @@ textarea {
 		max-width: 1280px;
 		margin: auto;
 	}
-	.masthead-pre-fixed .main-navigation .custom-logo-link,
-	.masthead-pre-fixed .main-navigation .donation-button {
+	.masthead-pre-fixed .main-navigation .custom-logo-link {
 		display: inline-block;
 		position: absolute;
+	}
+	.masthead-pre-fixed .main-navigation .donation-and-share {
+		display: inline-flex;
 	}
 	.masthead-pre-fixed .main-navigation .custom-logo {
 		height: 2rem;
@@ -909,14 +913,17 @@ textarea {
 		max-width: 60%;
 		margin: auto;
 	}
-	
-}
 
+}
+.withoutbuttonlook {
+	display: block;
+	border: none;
+	background: transparent;
+}
 /*--------------------------------------------------------------
 ## Main navigation menu
 --------------------------------------------------------------*/
 .main-navigation {
-	font-weight: var(--global-font-weight-bold);
 	font-size: 0.875rem;
 	line-height: 1.714;
 }
@@ -1081,8 +1088,9 @@ textarea {
 	}
 	.donation-ctnr {
 		top: 0.5rem;
-		justify-content: flex-end;
 		right: 0.5rem;
+		justify-content: space-between;
+		margin-left: 3.5rem;
 	}
 	.affiliate-logo-link {
 		margin-right: 0.5rem;
@@ -1461,9 +1469,7 @@ textarea {
 #et_builder_outer_content h2 + .wpcf7 {
 	margin-top: 3rem;
 }
-.wpcf7-form .form-info * {
-	color: #fff;
-}
+
 .wpcf7-form ::placeholder,
 .wpcf7-form input[type=submit]{
 	font-weight: bold;
@@ -1481,11 +1487,80 @@ textarea {
 	font-weight: bold;
 	font-size: 0.75rem;
 }
+
+div.wpcf7 .ajax-loader,
+#et-boc div.wpcf7 .ajax-loader {
+	width: 1.25rem;
+  height: 1.25rem;
+  position: relative;
+  color: inherit;
+  display: inline-block;
+  animation: ld-cycle 1s infinite linear;
+  margin-right: 1rem;
+}
+
+.wpcf7-response-output,
+#et-boc .wpcf7-response-output {
+	width: 100%;
+	padding: .75rem;
+	color: #fff;
+	position: relative;
+	top: -58px;
+	width: calc(100% - 8.5rem);
+}
+.wpcf7-response-output.wpcf7-mail-sent-ok,
+#et-boc .wpcf7-mail-sent-ok{
+	background-color: var(--global-green);
+}
+
+.wpcf7-response-output.wpcf7-validation-errors,
+#et-boc .wpcf7-validation-errors {
+	background-color: var(--global-red);
+}
+
+div.wpcf7 .ajax-loader:after {
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: " ";
+  display: inline-block;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 0.15em;
+  -webkit-background-clip: padding-box;
+  border-color: currentColor currentColor currentColor transparent;
+
+}
+@keyframes ld-cycle {
+  0%, 50%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);
+  }
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 .et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form .form-textarea {
 	padding: 0;
 }
 .et_divi_builder #et_builder_outer_content .et_pb_module .wpcf7-form p:last-of-type {
-	text-align: right;
+	display: flex;
+	align-items: center;
+	flex-direction: row-reverse;
 }
 [id=cf7-objet] {
 	width: 100%!important;
@@ -1614,4 +1689,66 @@ textarea {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+
+.donation-and-share {
+	display: flex;
+}
+.pehaarig-share-buttons-ctnr {
+	margin-left: 8px;
+	position: relative;
+	z-index: 100;
+}
+.pehaarig-share-buttons {
+	position: absolute;
+	padding: 0 4px;
+}
+
+.pehaarig-trigger-share {
+	display: block;
+	width: 40px;
+	height: 40px;
+
+}
+.pehaarig-share-service {
+	display: block;
+	width: 32px;
+	height: 32px;
+
+	transition: 0.3s;
+}
+.pehaarig-trigger-share-btn {
+	margin: 0;
+	padding: 0;
+}
+.pehaarig-share-buttons a {
+	display: block;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.4s 0.4s;
+	margin: 12px 0;
+}
+.pehaarig-share-buttons a:nth-child(1) {
+	transform: translate3d(0, 10px, 0);
+	transition-delay: 0s;
+}
+.pehaarig-share-buttons a:nth-child(2) {
+	transform: translate3d(0, 20px, 0);
+	transition-delay: 0.1s;
+}
+.pehaarig-share-buttons a:nth-child(3) {
+	transform: translate3d(0, 30px, 0);
+	transition-delay: 0.2s;
+}
+.pehaarig-share-buttons a:nth-child(4) {
+	transform: translate3d(0, 40px, 0);
+	transition-delay: 0.3s;
+}
+.share-toggled-in .pehaarig-share-buttons a {
+	visibility: visible;
+	opacity: 1;
+	transform: translate3d(0,0,0);
+}
+a:hover .pehaarig-share-service {
+	transform: scale(1.2);
 }

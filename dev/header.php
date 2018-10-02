@@ -28,11 +28,11 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wprig' ); ?></a>
 	<header id="masthead" class="site-header">
-		
+
 		<div class="site-branding">
 			<div class="donation-ctnr">
 				<?php pehaarig_custom_logo_affiliate(); ?>
-				<div>
+				<div class="donation-and-share">
 					<?php pehaarig_donation_button(); ?>
 					<?php pehaarig_social_share(); ?>
 				</div>
@@ -40,7 +40,7 @@
 			<div class="custom-logo-link-ctnr">
 				<?php pehaarig_custom_logo_main( true, true ); ?>
 			</div>
-			
+
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main menu', 'wprig' ); ?>"
@@ -58,7 +58,7 @@
 				</amp-state>
 			<?php endif; ?>
 
-			<button class="menu-toggle" aria-label="<?php esc_attr_e( 'Open menu', 'wprig' ); ?>" aria-controls="primary-menu" aria-expanded="false"
+			<button class="menu-toggle withoutbuttonlook" aria-label="<?php esc_attr_e( 'Open menu', 'wprig' ); ?>" aria-controls="primary-menu" aria-expanded="false"
 				<?php if ( wprig_is_amp() ) : ?>
 					on="tap:AMP.setState( { siteNavigationMenu: { expanded: ! siteNavigationMenu.expanded } } )"
 					[aria-expanded]="siteNavigationMenu.expanded ? 'true' : 'false'"
@@ -70,7 +70,7 @@
 			<?php pehaarig_custom_logo_main(); ?>
 			<div class="primary-menu-container <?php echo esc_attr( $menu_class ); ?>">
 				<?php
-				
+
 				wp_nav_menu(
 					array(
 						'theme_location' => 'primary',
@@ -82,8 +82,10 @@
 
 				?>
 			</div>
-			<?php pehaarig_donation_button(); ?>
-			<?php pehaarig_social_share(); ?>
+			<div class="donation-and-share">
+				<?php pehaarig_donation_button(); ?>
+				<?php pehaarig_social_share(); ?>
+			</div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 	<div class="grid-container wrapper">

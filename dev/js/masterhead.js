@@ -43,7 +43,7 @@ function activateInternalLinks() {
 	var scrollTop;
 	const MENUTOGGLE = jQuery( '.menu-toggle' );
 	const SITENAV = jQuery( '#site-navigation' );
-	
+
 	jQuery( '.main-navigation-menu a[href*=#]' ).on( 'touchstart click', function( e ) {
 
 		var target = this.hash;
@@ -171,9 +171,27 @@ function donationButton( el ) {
 	el.onmousemove = function( event ) {
 	    DONATIONCTNR.setAttribute( 'style',
 	      'transform: translateY(' + ( ( event.pageY - window.scrollY - el.getBoundingClientRect().top ) - 100 ) +
-	      'px) translateX(' + ( ( event.pageX - el.offsetLeft ) - 100 ) +
+	      'px) translateX(' + ( ( event.pageX - el.getBoundingClientRect().left ) - 100 ) +
 	      'px);' );
 	};
 }
 
 initDonationButtonsEffect();
+
+function initShareButton() {
+	const SHAREBUTTONS = document.querySelectorAll( '.pehaarig-trigger-share' );
+	if ( !SHAREBUTTONS.length ) {
+		return;
+	}
+	for ( let i = 0; i < SHAREBUTTONS.length; i++ ) {
+		shareButton( SHAREBUTTONS[i] );
+	}
+}
+
+function shareButton( el ) {
+	el.onclick = function() {
+		el.parentNode.parentNode.classList.toggle( 'share-toggled-in' );
+	}
+}
+
+initShareButton();

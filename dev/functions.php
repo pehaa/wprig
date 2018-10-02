@@ -215,18 +215,18 @@ function wprig_styles() {
 	wp_enqueue_style( 'wprig-fonts', wprig_fonts_url(), array(), null );
 
 	// Enqueue main stylesheet.
-	wp_enqueue_style( 'wprig-base-style', get_stylesheet_uri(), array(), '20180805' );
+	wp_enqueue_style( 'wprig-base-style', get_stylesheet_uri(), array(), '20180928' );
 
 	// Register component styles that are printed as needed.
-	wp_register_style( 'wprig-comments', get_theme_file_uri( '/css/comments.css' ), array(), '20180514' );
-	wp_register_style( 'wprig-content', get_theme_file_uri( '/css/content.css' ), array(), '20180514' );
-	wp_register_style( 'wprig-sidebar', get_theme_file_uri( '/css/sidebar.css' ), array(), '20180514' );
-	wp_register_style( 'wprig-widgets', get_theme_file_uri( '/css/widgets.css' ), array(), '20180514' );
-	wp_register_style( 'wprig-front-page', get_theme_file_uri( '/css/front-page.css' ), array(), '20180514' );
-	wp_register_style( 'wprig-search', get_theme_file_uri( '/css/search.css' ), array(), '20180514' );
+	wp_register_style( 'wprig-comments', get_theme_file_uri( '/css/comments.css' ), array(), '20180928' );
+	wp_register_style( 'wprig-content', get_theme_file_uri( '/css/content.css' ), array(), '20180928' );
+	wp_register_style( 'wprig-sidebar', get_theme_file_uri( '/css/sidebar.css' ), array(), '20180928' );
+	wp_register_style( 'wprig-widgets', get_theme_file_uri( '/css/widgets.css' ), array(), '20180928' );
+	wp_register_style( 'wprig-front-page', get_theme_file_uri( '/css/front-page.css' ), array(), '20180928' );
+	wp_register_style( 'wprig-search', get_theme_file_uri( '/css/search.css' ), array(), '20180928' );
 
 	if ( is_404() ) {
-		wp_enqueue_style( 'wprig-404-page', get_theme_file_uri( '/css/404.css' ), array(), '20180514' );
+		wp_enqueue_style( 'wprig-404-page', get_theme_file_uri( '/css/404.css' ), array(), '20180928' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'wprig_styles' );
@@ -240,7 +240,7 @@ function wprig_scripts() {
 	if ( ! wprig_is_amp() ) {
 
 		// Enqueue the navigation script.
-		wp_enqueue_script( 'wprig-navigation', get_theme_file_uri( '/js/navigation.js' ), array(), '20180514', true );
+		wp_enqueue_script( 'wprig-navigation', get_theme_file_uri( '/js/navigation.js' ), array(), '20180924', true );
 		wp_script_add_data( 'wprig-navigation', 'async', true );
 		wp_localize_script( 'wprig-navigation', 'wprigScreenReaderText', array(
 			'expand'   => __( 'Expand child menu', 'wprig' ),
@@ -255,17 +255,17 @@ function wprig_scripts() {
 
 		// Enqueue the masterhead script.
 		if ( apply_filters( 'pehaarig_enable_back_to_top', true ) ) {
-			wp_enqueue_script( 'pehaarig-backtotop', get_theme_file_uri( '/js/backtotop.js' ), array(), '20180514', true );
+			wp_enqueue_script( 'pehaarig-backtotop', get_theme_file_uri( '/js/backtotop.js' ), array(), '20180924', true );
 			wp_script_add_data( 'pehaarig-backtotop', 'async', true );
 		}
 
 		//Enqueue accessibility fix id divi builder is enabled
 		if ( class_exists( 'ET_Builder_Plugin' ) ) {
-			wp_enqueue_script( 'pehaarig-access', get_theme_file_uri( '/js/accessibility-fix.js' ), array(), '20180514', true );
+			wp_enqueue_script( 'pehaarig-access', get_theme_file_uri( '/js/accessibility-fix.js' ), array(), '20180924', true );
 			wp_script_add_data( 'pehaarig-access', 'async', true );
 		}
 		// Enqueue skip-link-focus script.
-		wp_enqueue_script( 'wprig-skip-link-focus-fix', get_theme_file_uri( '/js/skip-link-focus-fix.js' ), array(), '20180514', false );
+		wp_enqueue_script( 'wprig-skip-link-focus-fix', get_theme_file_uri( '/js/skip-link-focus-fix.js' ), array(), '20180924', false );
 		wp_script_add_data( 'wprig-skip-link-focus-fix', 'defer', true );
 
 		// Enqueue comment script on singular post/page views only.
@@ -288,7 +288,7 @@ function wprig_scripts_late() {
 	wp_script_add_data( 'wprig-masterhead', 'async', true );
 	if ( is_front_page() ) {
 
-			wp_enqueue_script( 'pehaarig-contact', get_theme_file_uri( '/js/contact.js' ), array( 'wprig-masterhead' ), '20180514', true );
+			wp_enqueue_script( 'pehaarig-contact', get_theme_file_uri( '/js/contact.js' ), array( 'wprig-masterhead' ), '20180924', true );
 			$object = 'none';
 
 			if ( isset( $_GET['objet'] ) && in_array( $_GET['objet'], array( 'partenariat', 'benevolat', 'projet', 'financement' ) ) ) {
