@@ -415,8 +415,8 @@ if ( ! function_exists( 'pehaarig_custom_logo_affiliate' ) ) :
 				'width' => 64,
 			);
 
-			$image_alt = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );			
-			$html = sprintf( '<a href="%1$s" class="custom-logo-link affiliate-logo-link" rel="home" itemprop="url">%2$s</a>',
+			$image_alt = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );
+			$html = sprintf( '<a href="%1$s" class="custom-logo-link affiliate-logo-link" target="_blank" rel="noopener" itemprop="url">%2$s</a>',
 				$url ? esc_url( $url ) : esc_url( home_url( '/' ) ),
 				wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr )
 			);
@@ -457,9 +457,9 @@ if ( ! function_exists( 'pehaarig_donation_button' ) ) :
 							</svg>
 						</span>
   						<span class="donation-button-span">Faire un don</span>
-  					</a>', 
+  					</a>',
   					esc_url( $url ),
-  					get_theme_mod( 'pehaarig_link_donate_new_tab', 1 ) ? 'target="_blank"': '' 					
+  					get_theme_mod( 'pehaarig_link_donate_new_tab', 1 ) ? 'target="_blank" rel="noopener"': ''
   				);
 		}
 	}

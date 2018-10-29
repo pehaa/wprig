@@ -24,12 +24,12 @@ function initMasterhead() {
 
 	// Toggle the submenu when we click the dropdown button.
 	window.addEventListener( 'scroll', function( event ) {
-		if ( window.scrollY > threshold0 ) {
+		if ( document.documentElement.scrollTop > threshold0 ) {
 			MASTHEAD.classList.add( 'masthead-pre-fixed' );
 		} else {
 			MASTHEAD.classList.remove( 'masthead-pre-fixed' );
 		}
-		if ( window.scrollY > threshold1 ) {
+		if ( document.documentElement.scrollTop > threshold1 ) {
 			MASTHEAD.classList.add( 'masthead-fixed' );
 		} else {
 			MASTHEAD.classList.remove( 'masthead-fixed' );
@@ -122,7 +122,7 @@ if ( jQuery( 'body' ).hasClass( 'home' ) ) {
 
 	window.addEventListener( 'scroll', function() {
 
-		lastKnownScrollPosition = window.scrollY;
+		lastKnownScrollPosition = document.documentElement.scrollTop;
 
 		if ( ! ticking ) {
 
@@ -170,7 +170,7 @@ function donationButton( el ) {
 	};
 	el.onmousemove = function( event ) {
 	    DONATIONCTNR.setAttribute( 'style',
-	      'transform: translateY(' + ( ( event.pageY - window.scrollY - el.getBoundingClientRect().top ) - 100 ) +
+	      'transform: translateY(' + ( ( event.pageY - document.documentElement.scrollTop - el.getBoundingClientRect().top ) - 100 ) +
 	      'px) translateX(' + ( ( event.pageX - el.getBoundingClientRect().left ) - 100 ) +
 	      'px);' );
 	};

@@ -12,7 +12,7 @@
 ?>
 </div><!-- #page -->
 </div><!-- .grid-container -->
-<footer id="colophon" class="site-footer">	
+<footer id="colophon" class="site-footer">
 	<nav class="secondary-navigation">
 		<?php if ( pehaarig_has_custom_logo( 'footer' ) ) {
 			pehaarig_custom_logo_footer();
@@ -33,7 +33,7 @@
 		if ( $linkedin_profile ) { ?>
 			<ul class="footer-socials">
 				<li>
-					<a href="<?php echo esc_url( $linkedin_profile ); ?>" aria-label="<?php echo esc_html( 'Visit out Linkedin Profile', 'pehaarig' ); ?>">
+					<a href="<?php echo esc_url( $linkedin_profile ); ?>" aria-label="<?php echo esc_html( 'Visit out Linkedin Profile', 'pehaarig' ); ?>" target="_blank" rel="noopener">
 						<svg class="pehaarig-svg">
 							<use xlink:href="#linkedin" />
 						</svg>
@@ -41,7 +41,7 @@
 				</li>
 			</ul>
 		<?php } ?>
-		
+
 	</nav><!-- .wrapper -->
 	<a id="pehaarig-to-top" href="#body" aria-label="<?php esc_html_e( 'Back to top', 'pehaarig' ); ?>" class="pehaarig-to-top"><i class="icon arrow-up"></i></a>
 </footer><!-- #colophon -->

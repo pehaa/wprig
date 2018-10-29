@@ -17,9 +17,9 @@ function initBackToTop() {
 		return;
 	}
 
-	// Toggle the submenu when we click the dropdown button.
+	// Show/hide scroll to top button depending on the scroll position.
 	window.addEventListener( 'scroll', function( event ) {
-		if ( window.scrollY > threshold ) {
+		if ( document.documentElement.scrollTop > threshold ) {
 			BACKTOTOP.classList.add( 'pehaarig-to-top-active' );
 		} else {
 			BACKTOTOP.classList.remove( 'pehaarig-to-top-active' );

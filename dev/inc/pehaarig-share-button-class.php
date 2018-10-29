@@ -21,7 +21,7 @@ class PeHaaRig_Share_Button {
 
 		$this->generate_links();
 		$this->iconShare = '<svg class="pehaarig-svg pehaarig-trigger-share"><use xlink:href="#share" /></svg>';
-		$this->twitterShare = '<svg class="pehaarig-svg pehaarig-share-service"><use id="tw" xlink:href="#twitter" /></svg>';
+		$this->twitterShare = '<svg class="pehaarig-svg pehaarig-share-service"><use xlink:href="#twitter" /></svg>';
 		$this->facebookShare = '<svg class="pehaarig-svg pehaarig-share-service"><use xlink:href="#facebook" /></svg>';
 		$this->linkedinShare = '<svg class="pehaarig-svg pehaarig-share-service"><use xlink:href="#linkedin-share" /></svg>';
 		$this->mailShare = '<svg class="pehaarig-svg pehaarig-share-service"><use xlink:href="#mail" /></svg>';
@@ -34,7 +34,7 @@ class PeHaaRig_Share_Button {
 		$output .= sprintf( '<a href="%1$s" aria-label="Share on Twitter">%2$s</a>', $this->link_twitter, $this->twitterShare );
 		$output .= sprintf( '<a href="%1$s" aria-label="Share on Facebook">%2$s</a>', $this->link_facebook, $this->facebookShare );
 		$output .= sprintf( '<a href="%1$s" aria-label="Share on Linkedin">%2$s</a>', $this->link_linkedin, $this->linkedinShare );
-		$output .= sprintf( '<a href="%1$s" aria-label="Share via Email">%2$s</a>', $this->link_mail, $this->mailShare );
+		//$output .= sprintf( '<a href="%1$s" aria-label="Share via Email">%2$s</a>', $this->link_mail, $this->mailShare );
 		$output .= '</div>';
 		$output .= '</div>';
 		return $output;
@@ -54,9 +54,16 @@ class PeHaaRig_Share_Button {
 			return;
 		}
 		$this->link_twitter = esc_url( 'https://twitter.com/share?text=' . rawurlencode( html_entity_decode( $share_title, ENT_COMPAT, 'UTF-8' ) ) . '&url=' . rawurlencode( $share_url ) );
-		$this->link_facebook = esc_url( 'https://m.facebook.com/sharer.php?u=' . $share_title . '&t=' . rawurlencode( $share_title ) );
+
+		// check here: https://cards-dev.twitter.com/validator must be enabled for robots
+
+		$this->link_facebook = esc_url( 'https://m.facebook.com/sharer.php?u=' . $share_url . '&t=' . rawurlencode( $share_title ) );
+
+		// check here: https://developers.facebook.com/tools/debug/sharing/
 
 		$this->link_linkedin = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $share_url . '&amp;title=' . rawurlencode( $share_title ) . '&amp;summary=' . rawurlencode( mb_substr( html_entity_decode( $description, ENT_QUOTES, 'UTF-8' ), 0, 256 ) );
+
+		// check here: https://www.linkedin.com/post-inspector/inspect/
 
 		$this->link_mail = 'mailto:?subject=' . rawurlencode( $share_title ) . '&body=' . $share_url;
 	}

@@ -32,7 +32,7 @@ function initMainNavigation() {
 	// Create the dropdown button.
 	const dropdownButton = getDropdownButton();
 
-	SUBMENUS.forEach( function( submenu ) {
+	Array.prototype.slice.call( SUBMENUS ).forEach( function( submenu ) {
 		const parentMenuItem = submenu.parentNode;
 		var dropdown = parentMenuItem.querySelector( '.dropdown' );
 
@@ -73,7 +73,7 @@ function initMainNavigation() {
 
 		// When we focus on a menu link, make sure all siblings are closed.
 		parentMenuItem.querySelector( 'a' ).addEventListener( 'focus', function( event ) {
-			this.parentNode.parentNode.querySelectorAll( 'li.toggled-on' ).forEach( function( item ) {
+			Array.prototype.slice.call( this.parentNode.parentNode.querySelectorAll( 'li.toggled-on' ) ).forEach( function( item ) {
 				toggleSubMenu( item, false );
 			});
 		});
@@ -161,14 +161,14 @@ function toggleSubMenu( parentMenuItem, forceToggle ) {
 		toggleButton.setAttribute( 'aria-label', wprigScreenReaderText.expand );
 
 		// Make sure all children are closed.
-		parentMenuItem.querySelectorAll( '.toggled-on' ).forEach( function( item ) {
+		Array.prototype.slice.call( parentMenuItem.querySelectorAll( '.toggled-on' ) ).forEach( function( item ) {
 			toggleSubMenu( item, false );
         });
 
 	} else {
 
 		// Make sure siblings are closed.
-		parentMenuItem.parentNode.querySelectorAll( 'li.toggled-on' ).forEach( function( item ) {
+		Array.prototype.slice.call( parentMenuItem.parentNode.querySelectorAll( 'li.toggled-on' ) ).forEach( function( item ) {
 			toggleSubMenu( item, false );
 		});
 

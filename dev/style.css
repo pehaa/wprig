@@ -773,12 +773,20 @@ textarea {
 	margin: 0 auto;
 }
 .affiliate-logo-link {
-	max-width: 15%;
+	flex: 0 1 4rem;
+	max-width: 4rem;
 }
 .custom-logo-link-ctnr {
 	text-align: center;
 	position: relative;
 }
+
+.site-footer .custom-logo,
+.affiliate-logo {
+	width: 100%;
+	height: 100%;
+}
+
 
 .donation-button {
 	display: inline-block;
@@ -800,6 +808,7 @@ textarea {
 .main-navigation .donation-and-share {
 	position: absolute;
 	right: 0.5rem;
+	top: 0.75rem;
 }
 .circle_pos {
   position: absolute;
@@ -899,6 +908,8 @@ textarea {
 	.masthead-pre-fixed .main-navigation .custom-logo-link {
 		display: inline-block;
 		position: absolute;
+		top: 1rem;
+		height: 2rem;
 	}
 	.masthead-pre-fixed .main-navigation .donation-and-share {
 		display: inline-flex;
@@ -1260,7 +1271,13 @@ textarea {
 	 */
 	.main-navigation li:hover > ul,
 	.main-navigation li.toggled-on > ul,
-	.main-navigation:not(.has-dropdown-toggle) li:focus > ul,
+	.main-navigation:not(.has-dropdown-toggle) li:focus > ul {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+		transform: translate3d(0, 0, 0);
+	}
+
 	.main-navigation:not(.has-dropdown-toggle) li:focus-within > ul {
 		visibility: visible;
 		opacity: 1;
@@ -1341,6 +1358,10 @@ textarea {
 }
 .secondary-navigation-menu .current-menu-item a[href*="#"] {
 	opacity: 0.7;
+}
+
+.site-footer .custom-logo-link {
+	flex: 0 1 150px;
 }
 .site-footer .custom-logo {
 	max-height: 3rem;
@@ -1752,3 +1773,61 @@ div.wpcf7 .ajax-loader:after {
 a:hover .pehaarig-share-service {
 	transform: scale(1.2);
 }
+
+/* specific fixes */
+.et-db #et-boc .et_pb_blurb_content {
+	max-width: none;
+}
+
+.et-db #et-boc .maad-subsription img:nth-child(n),
+.et-db #et-boc .et_pb_main_blurb_image img:nth-child(n),
+.et-db #et-boc .et_pb_image_wrap img:nth-child(n) {
+	width: 100%;
+	max-height: none;
+}
+
+
+
+
+
+.maad-fp-link {
+	z-index: 1;
+}
+.column-2buttons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.column-2buttons .maad-button {
+	margin: 0 6px 12px!important;
+}
+.maad_maintenant_filterable_projects .post-1322 .maad-ft-info {
+	background: #007773!important;
+}
+
+.et-db #et-boc .et_pb_blurb_content {
+	max-width: none;
+}
+
+@media screen and (min-width: 980px) and (max-width: 1204px) {
+	.project-text {
+		padding: 32px!important;
+	}
+	.project-subtitle {
+		font-size: 1.75rem;
+	}
+}
+
+#cookie-law-info-bar {
+	z-index: 100000;
+}
+
+.et_divi_builder #et_builder_outer_content .maad_images-item img {
+	width: 96px;
+}
+@media screen and (min-width: 64em) {
+	.et_divi_builder #et_builder_outer_content .maad_images-item img {
+		width: 96px;
+	}
+}
+
