@@ -255,7 +255,7 @@ function wprig_scripts() {
 
 		// Enqueue the masterhead script.
 		if ( apply_filters( 'pehaarig_enable_back_to_top', true ) ) {
-			wp_enqueue_script( 'pehaarig-backtotop', get_theme_file_uri( '/js/backtotop.js' ), array(), '20180924', true );
+			wp_enqueue_script( 'pehaarig-backtotop', get_theme_file_uri( '/js/backtotop.js' ), array(), '20181221', true );
 			wp_script_add_data( 'pehaarig-backtotop', 'async', true );
 		}
 

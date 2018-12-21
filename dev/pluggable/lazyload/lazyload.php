@@ -258,7 +258,7 @@ function wprig_build_attributes_string( $attributes ) {
  * Enqueue and defer lazyload script.
  */
 function wprig_enqueue_assets() {
-	wp_enqueue_script( 'wprig-lazy-load-images', get_theme_file_uri( '/pluggable/lazyload/js/lazyload.js' ), array(), '20151215', false );
+	wp_enqueue_script( 'wprig-lazy-load-images', get_theme_file_uri( '/pluggable/lazyload/js/lazyload.js' ), array(), '20181221', false );
 	wp_script_add_data( 'wprig-lazy-load-images', 'defer', true );
 }
 

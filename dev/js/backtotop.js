@@ -16,10 +16,9 @@ function initBackToTop() {
 	if ( undefined === BACKTOTOP ) {
 		return;
 	}
-
 	// Show/hide scroll to top button depending on the scroll position.
 	window.addEventListener( 'scroll', function( event ) {
-		if ( document.documentElement.scrollTop > threshold ) {
+		if ( Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) > threshold ) {
 			BACKTOTOP.classList.add( 'pehaarig-to-top-active' );
 		} else {
 			BACKTOTOP.classList.remove( 'pehaarig-to-top-active' );

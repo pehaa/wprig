@@ -651,7 +651,7 @@ button:focus {
 }
 
 a:hover, a:active,
-button: hover {
+button:hover {
 	outline: 0;
 }
 
@@ -1371,7 +1371,7 @@ textarea {
 	opacity: 0;
 	visibility: hidden;
 	position: fixed;
-	bottom: 1.5rem;
+	bottom: 1rem;
 	right: 0.75rem;
 	transition: 0.5s;
 	display: block;

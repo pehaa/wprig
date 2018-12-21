@@ -5,7 +5,6 @@
  */
 document.addEventListener( 'DOMContentLoaded', function() {
 	var lazyImages = [].slice.call( document.querySelectorAll( 'img.lazy' ) );
-	console.log(lazyImages);
 	let active = false;
 	const lazyLoad = function() {
 		if ( false === active ) {
@@ -80,7 +79,6 @@ document.addEventListener( 'DOMContentLoaded', function() {
 		// For older browsers lacking IntersectionObserver support.
 		// See https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/
 
-		console.log('scroll listener');
 		lazyLoad();
 		document.addEventListener( 'scroll', lazyLoad );
 		window.addEventListener( 'resize', lazyLoad );
